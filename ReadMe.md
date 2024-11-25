@@ -25,7 +25,7 @@ ChefCircle is a modern recipe-sharing platform designed for food enthusiasts to 
 ---
 
 ## 📂 Folder Structure
-
+```
 ChefCircle/
 ├── index.html             # Main homepage (Shared work)
 ├── css/                   # Stylesheets
@@ -53,3 +53,4 @@ ChefCircle/
 │   ├── recipe-card.html   # Recipe card (Shared work)
 │   └── error-modal.html   # Error handling component (Shared work)
 ├── README.md              # Project documentation
+```
