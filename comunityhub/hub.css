@@ -1,0 +1,179 @@
+/* General Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f7f7fa;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+/* Container */
+.container {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Header */
+h2 {
+    text-align: center;
+    color: #5cb85c;
+    margin-bottom: 1rem;
+}
+
+h2 span {
+    color: #ff9800;
+}
+
+/* Form Styling */
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.form-control {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-top: 0.3rem;
+}
+
+textarea.form-control {
+    height: 80px;
+}
+
+#char-count {
+    text-align: right;
+    display: block;
+    color: #777;
+    font-size: 0.65rem;
+    margin-top: 0.3rem;
+}
+
+/* Buttons */
+.btn {
+    background-color: #5cb85c;
+    color: #fff;
+    padding: 0.7rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    display: block;
+    margin: 1rem auto;
+    text-align: center;
+    width: 100%;
+}
+
+.btn:hover {
+    background-color: #4cae4c;
+}
+
+/* Testimonials */
+#testimonials {
+    margin-top: 3rem;
+}
+
+.feedback-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.feedback-card {
+    background: #f9f9f9;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.feedback-card img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 2px solid #5cb85c;
+}
+
+.feedback-card-details {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.feedback-card-details h5 {
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.feedback-card-details .star-rating {
+    color: #ff9800;
+}
+
+.feedback-card-details p {
+    margin: 0.5rem 0;
+    font-size: 1rem;
+    color: #666;
+}
+
+.feedback-card-details .publish_date {
+    font-size: 10px;
+    color: #777;
+}
+
+/* Sort Feedback */
+.sort-feedback {
+    margin-bottom: 1rem;
+    text-align: right;
+}
+
+.sort-feedback select {
+    padding: 0.5rem;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+/* Feedback Form Fieldset */
+.feedback-form {
+    border: 2px solid #5cb85c;
+    border-radius: 8px;
+    padding: 1.5rem;
+    background-color: #f7f7f7;
+}
+
+.feedback-form legend {
+    font-size: 1.2rem;
+    color: #5cb85c;
+    font-weight: bold;
+}
+
+.feedback-form .form-group label {
+    font-size: 1rem;
+}
+
+.feedback-form button {
+    width: 100%;
+}
+
+/* Media Queries for Responsive Layout */
+@media (max-width: 768px) {
+    .feedback-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .feedback-grid {
+        grid-template-columns: 1fr;
+    }
+}
