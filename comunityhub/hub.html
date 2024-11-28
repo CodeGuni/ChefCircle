@@ -3,45 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <title>Community Hub - Feedback</title>
+    <!-- Styling -->
     <link rel="stylesheet" href="jquery-ui-1.12.1.custom/jquery-ui.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" 
+          integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" 
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="hub.css">
 </head>
 <body>
-    <div id="respond" class="container">
-        <h4> Leave a <span>Feedback</span></h4>
-        <form id="commentform">
+    <div id="respond" class="container_wrap_wrap">
+        <h4>ADD a Review</h4>
+        <form id="reviewForm">
             <fieldset class="feedback-form">
                 <legend>Provide Your Feedback</legend>
-                <div class="form-group">
-                    <label for="author">Name</label>
-                    <input type="text" id="author" class="form-control" placeholder="Enter your name">
+                <div class="form-wrap">
+                    <label for="customer">Name</label>
+                    <input type="text" id="customer" class="form-control" placeholder="Enter your name">
                 </div>
-                <div class="form-group">
+                <div class="form-wrap">
                     <label for="email">Email</label>
                     <input type="email" id="email" class="form-control" placeholder="Enter your email">
                 </div>
-                <div class="form-group">
+                <div class="form-wrap">
                     <label for="profile_image">Upload your image (Optional)</label>
                     <input type="file" accept="image/*" id="profile_image" class="form-control">
                     <div id="image-preview"></div>
                 </div>
-                <div class="form-group">
-                    <label for="rating">Rating</label>
-                    <select id="rating" class="form-control">
-                        <option value="" disabled selected>-- Select One --</option>
-                        <option value="1">1 ⭐</option>
-                        <option value="2">2 ⭐</option>
-                        <option value="3">3 ⭐</option>
-                        <option value="4">4 ⭐</option>
-                        <option value="5">5 ⭐</option>
-                    </select>
+                <div class="form-wrap">
+                    <!-- Star Rating Integration -->
+                    <div class="rating"></div>
+                    <input type="hidden" id="ratingValue">
                 </div>
-                <div class="form-group">
-                    <label for="comment">Comment</label>
+                <div class="form-wrap">
+                    <label for="comment">Leave a comment</label>
                     <textarea id="comment" class="form-control" placeholder="Write your comment"></textarea>
-                    <div id="char-count-container">
-                        <span id="char-count">250  characters remaining </span>
+                    <div id="char-count-container_wrap">
+                        <span id="char-count">250 characters remaining</span>
                     </div>
                 </div>
                 <button type="submit" id="submit-button" class="btn">Submit Review</button>
@@ -49,7 +48,7 @@
         </form>
     </div>
 
-    <div id="testimonials" class="container">
+    <div id="testimonials" class="container_wrap">
         <h4>Testimonials</h4>
         <div class="sort-feedback">
             <label for="sort-feedback">Sort by:</label>
@@ -63,8 +62,9 @@
         <div id="feedback-list" class="feedback-grid"></div>
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="./dist/jquery-star.js"></script>
     <script src="hub.js"></script>
 </body>
 </html>

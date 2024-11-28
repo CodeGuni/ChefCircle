@@ -7,8 +7,8 @@ body {
     color: #333;
 }
 
-/* Container */
-.container {
+/* container_wrap */
+.container_wrap {
     max-width: 900px;
     margin: 2rem auto;
     padding: 2rem;
@@ -29,11 +29,11 @@ h2 span {
 }
 
 /* Form Styling */
-.form-group {
+.form-wrap {
     margin-bottom: 1rem;
 }
 
-.form-group label {
+.form-wrap label {
     font-weight: bold;
     margin-bottom: 0.5rem;
     display: block;
@@ -106,9 +106,18 @@ textarea.form-control {
     border: 2px solid #5cb85c;
 }
 
+#reviewForm {
+    display: flex;
+    justify-content: center;
+}
+
 .feedback-card-details {
     text-align: center;
     margin-top: 1rem;
+}
+
+h5 {
+    margin: 0;
 }
 
 .feedback-card-details h5 {
@@ -157,7 +166,7 @@ textarea.form-control {
     font-weight: bold;
 }
 
-.feedback-form .form-group label {
+.feedback-form .form-wrap label {
     font-size: 1rem;
 }
 
