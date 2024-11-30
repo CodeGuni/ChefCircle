@@ -14,57 +14,84 @@
 </head>
 <body>
     <div id="respond" class="container_wrap_wrap">
-        <h4>ADD a Review</h4>
-        <form id="reviewForm">
-            <fieldset class="feedback-form">
-                <legend>Provide Your Feedback</legend>
-                <div class="form-wrap">
-                    <label for="customer">Name</label>
-                    <input type="text" id="customer" class="form-control" placeholder="Enter your name">
+        <!-- Navigation Bar -->
+        <header class="navbar">
+            <div class="logo">Community Hub</div>
+            <ul class="nav-menu">
+                <li><a href="#form-section">Add Review</a></li>
+                <li><a href="#testimonials-section">Testimonials</a></li>
+            </ul>
+        </header>
+
+        <!-- Main Content -->
+        <main>
+            <!-- Form Section -->
+            <section id="form-section" class="form-section">
+                <div class="container">
+                    <h2>Add Your Review</h2>
+                    <form id="reviewForm" class="review-form">
+                        <fieldset>
+                            <legend>Share Your Experience</legend>
+                            <div class="form-wrap">
+                                <div class="form-group">
+                                    <label for="first-name">First Name</label>
+                                    <input type="text" id="first-name" class="form-control" placeholder="First Name">
+                                </div>
+                                <div class="form-group">
+                                    <label for="last-name">Last Name</label>
+                                    <input type="text" id="last-name" class="form-control" placeholder="Last Name">
+                                </div>
+                            </div>
+                            <div class="form-wrap">
+                                <div class="form-group">
+                                    <label for="email">Email</label>
+                                    <input type="email" id="email" class="form-control" placeholder="Enter your email">
+                                </div>
+                                <div class="form-group">
+                                    <label for="profile_image">Upload your image</label>
+                                    <input type="file" accept="image/*" id="profile_image" class="form-control">
+                                    <div id="image-preview"></div>
+                                </div>
+                            </div>
+                            <div class="form-wrap">
+                                <label for="comment">Leave a comment</label>
+                                <textarea id="comment" class="form-control" placeholder="Write your comment"></textarea>
+                                <div id="char-count-container_wrap">
+                                    <span id="char-count">250 characters remaining</span>
+                                </div>
+                            </div>
+                            <div class="form-wrap">
+                                <div class="rating"></div>
+                                <input type="hidden" id="ratingValue">
+                            </div>
+                            <button type="submit" id="submit-button" class="btn">Submit Review</button>
+                        </fieldset>
+                    </form>
                 </div>
-                <div class="form-wrap">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" class="form-control" placeholder="Enter your email">
-                </div>
-                <div class="form-wrap">
-                    <label for="profile_image">Upload your image (Optional)</label>
-                    <input type="file" accept="image/*" id="profile_image" class="form-control">
-                    <div id="image-preview"></div>
-                </div>
-                <div class="form-wrap">
-                    <!-- Star Rating Integration -->
-                    <div class="rating"></div>
-                    <input type="hidden" id="ratingValue">
-                </div>
-                <div class="form-wrap">
-                    <label for="comment">Leave a comment</label>
-                    <textarea id="comment" class="form-control" placeholder="Write your comment"></textarea>
-                    <div id="char-count-container_wrap">
-                        <span id="char-count">250 characters remaining</span>
+            </section>
+
+            <!-- Testimonials Section -->
+            <section id="testimonials-section" class="testimonials-section">
+                <div class="container">
+                    <h2>Testimonials</h2>
+                    <div class="sort-feedback">
+                        <label for="sort-feedback">Sort by:</label>
+                        <select id="sort-feedback">
+                            <option value="newest">Newest</option>
+                            <option value="oldest">Oldest</option>
+                            <option value="highest">Highest Rating</option>
+                            <option value="lowest">Lowest Rating</option>
+                        </select>
                     </div>
+                    <div id="review-list" class="all-review-wrapper"></div>
                 </div>
-                <button type="submit" id="submit-button" class="btn">Submit Review</button>
-            </fieldset>
-        </form>
-    </div>
+            </section>
+        </main>
 
-    <div id="testimonials" class="container_wrap">
-        <h4>Testimonials</h4>
-        <div class="sort-feedback">
-            <label for="sort-feedback">Sort by:</label>
-            <select id="sort-feedback">
-                <option value="oldest">Oldest</option>
-                <option value="newest">Newest</option>
-                <option value="highest">Highest Rating</option>
-                <option value="lowest">Lowest Rating</option>
-            </select>
-        </div>
-        <div id="feedback-list" class="feedback-grid"></div>
+        <!-- Scripts -->
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="./dist/jquery-star.js"></script>
+        <script src="hub.js"></script>
     </div>
-
-    <!-- Scripts -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="./dist/jquery-star.js"></script>
-    <script src="hub.js"></script>
 </body>
 </html>
