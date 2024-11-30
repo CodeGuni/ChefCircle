@@ -153,6 +153,13 @@ textarea.form-control {
     max-width: 800px;
 }
 
+.testimonial-header > img {
+    padding: 6px;
+    max-width: 30%;
+    border: 2px solid #ccc;
+    border-radius: 16px;
+}
+
 .sort-feedback {
     display: flex;
     justify-content: flex-end;
@@ -169,6 +176,22 @@ textarea.form-control {
     margin-top: 1rem;
     text-align: center;
     max-width: 100%;
+}
+
+.form-btn-wrapper {
+    display: flex;
+    gap: 20px;
+}
+
+.rating.js-wc-star-rating {
+    width: 100%;
+    border: 2px solid #949494;
+    background-color: #f0eeee;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 12px;
 }
 
 #image-preview img {
@@ -201,5 +224,49 @@ textarea.form-control {
     font-size: 1.2em;
     color: #555;
     margin-top: 10px;
+}
+
+/* custom modal css  */
+.custom-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding-top: 100px;
+}
+
+.custom-modal-content {
+    background-color: white;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+    width: 80%;
+    max-width: 400px;
+}
+
+.custom-modal h3 {
+    margin-bottom: 15px;
+    color: #28a745;
+}
+
+.custom-modal p {
+    margin-bottom: 20px;
+}
+
+.custom-btn {
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.custom-btn:hover {
+    background-color: #218838;
 }
 

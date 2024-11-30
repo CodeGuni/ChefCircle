@@ -64,7 +64,16 @@
                                 <div class="rating"></div>
                                 <input type="hidden" id="ratingValue">
                             </div>
-                            <button type="submit" id="submit-button" class="btn">Submit Review</button>
+                            <div class="form-btn-wrapper">
+                                <div>
+                                    <button type="submit" id="submit-button" class="btn">Submit Review</button>
+                                </div>
+                                <div>
+                                    <button type="button" id="preview-button" class="btn">Preview</button>
+                                </div>
+                             
+                            </div>
+                           
                         </fieldset>
                     </form>
                 </div>
@@ -86,6 +95,17 @@
                     <div id="review-list" class="all-review-wrapper"></div>
                 </div>
             </section>
+
+            <!-- custom modal popup  -->
+            <div id="custom-modal" class="custom-modal">
+                <div class="custom-modal-content">
+                    <h3>Thank You for Your Feedback!</h3>
+                    <p>Your review has been submitted successfully.</p>
+                    <button id="close-custom-modal" class="custom-btn">Close</button>
+                </div>
+            </div>
+            
+
         </main>
 
         <!-- Scripts -->

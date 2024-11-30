@@ -22,11 +22,12 @@ let convertedImage = "";
 $('#profile_image').on('change', function () {
     const imgs = this.files[0];
     //case : return the user if trying to add more images
-    if (imgs.length > 1) {
+    if (this.files.length > 1) {
         alert("Only one image can be added.");
-        this.value = ""; 
+        this.value = "";
         return;
     }
+    
     if (imgs) {
         const reader = new FileReader();
         reader.onload = function () {
@@ -39,39 +40,44 @@ $('#profile_image').on('change', function () {
 
 $('#reviewForm').on('submit', function (e) {
     e.preventDefault();
+    const firstName = $('#first-name').val().trim();
+    const lastName = $('#last-name').val().trim();
+    const email = $('#email').val().trim();
+    const comment = $('#comment').val().trim();
 
-    // Retrieve the value, store it, trim unnecessary spaces, validate it, and return an error if no valid value is present. 
-    const firstName = $('#first-name').val().trim()
-    const lastName = $('#last-name').val().trim()
-    const email = $('#email').val().trim()
-    const comment = $('#comment').val().trim()
-
-    if(!firstName || !lastName || email || comment || totalRating === 0) {
-        alert("Please fill all required fields")
+    if (!firstName || !lastName || !email || !comment || totalRating === 0) {
+        alert("Please fill all required fields");
         return;
     }
 
     const customFormData = {
-        firstName: $('#first-name').val(),
-        lastName: $('#last-name').val(),
-        email: $('#email').val(),
-        comment: $('#comment').val(),
+        firstName: firstName,
+        lastName: lastName,
+        email: email,
+        comment: comment,
         rating: totalRating,
         profileImage: convertedImage,
     };
-    // storing image in Json array format so that easy to retrive data to display on testimonials
+
     let customReviews = JSON.parse(localStorage.getItem('reviews')) || [];
     customReviews.push(customFormData);
-
     localStorage.setItem('reviews', JSON.stringify(customReviews));
-
-    console.log("review submitted and stored successfully", customFormData);
-    console.log("All reviews:", customReviews);
 
     $('#reviewForm')[0].reset();
     $('#image-preview').empty();
     totalRating = 0;
+
+    $('#custom-modal').fadeIn();
+
+    setTimeout(function () {
+        $('#custom-modal').fadeOut();
+    }, 3000);
 });
+
+$('#close-custom-modal').on('click', function () {
+    $('#custom-modal').fadeOut();
+});
+
 
 const displayTestimonialData = () => {
     const customReviews = JSON.parse(localStorage.getItem('reviews')) || [];
@@ -109,6 +115,24 @@ const displayTestimonialData = () => {
 
     console.log("Page data", customReviews);
 };
+
+// a resuable custom sorting function based on rating order 
+$('#sort-feedback').on('change', function() {
+    const sortBy = $(this).val();
+    let sortedReviews = [...customReviews];
+    
+    if (sortBy === 'newest') {
+        sortedReviews = sortedReviews.reverse();  
+    } else if (sortBy === 'highest') {
+        sortedReviews = sortedReviews.sort((a, b) => b.rating - a.rating);
+    } else if (sortBy === 'lowest') {
+        sortedReviews = sortedReviews.sort((a, b) => a.rating - b.rating);
+    }
+
+    // Render sorted reviews on call
+    displayTestimonialData(sortedReviews);
+});
+
 
 // Below function will execute when the page loads / refresh
 $(document).ready(function() {
