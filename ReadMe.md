@@ -29,7 +29,6 @@ ChefCircle is a modern recipe-sharing platform designed for food enthusiasts to 
 ChefCircle/
 ├── index.html             # Main homepage (Shared work)
 ├── css/                   # Stylesheets
-│   ├── navbar.css         # Core styles with responsive layout and animations
 │   ├── global.css         # Shared global styles
 │   ├── homepage.css       # Styles for the homepage (Shared work)
 │   ├── recipe-submission.css  # Styles for Recipe Submission (Member 1)
@@ -37,7 +36,6 @@ ChefCircle/
 │   ├── meal-planner.css       # Styles for Meal Planner (Member 3)
 │   └── community-hub.css      # Styles for Community Hub (Member 4)
 ├── js/                    # JavaScript files
-│   ├── navbar.js          # Mobile menu toggle and active page detection
 │   ├── homepage.js        # Shared homepage functionality
 │   ├── recipe-submission.js  # JS for Recipe Submission (Member 1)
 │   ├── recipe-gallery.js     # JS for Recipe Explorer (Member 2)
@@ -50,9 +48,13 @@ ChefCircle/
 │   ├── meal-planner/      # Images for Meal Planner
 │   └── community-hub/     # Images for Community Hub
 ├── components/            # Reusable components
-│   ├── navbar.html        # Navigation markup with mobile menu structure
 │   ├── footer.html        # Footer (Shared work)
 │   ├── recipe-card.html   # Recipe card (Shared work)
 │   └── error-modal.html   # Error handling component (Shared work)
 ├── README.md              # Project documentation
+
+ChefCircle/navbar
+│   ├── navbar.css         # Core styles with responsive layout and animations
+│   ├── navbar.html        # Navigation markup with mobile menu structure
+│   ├── navbar.js          # Mobile menu toggle and active page detection
 ```
