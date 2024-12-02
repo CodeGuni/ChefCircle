@@ -1,5 +1,8 @@
 let totalRating = 0;
+let maxChar = 250;
+const comentTextBox = $('#comment');
 
+//jquery plugin with custom modifcation
 $('.rating').starRating({
     starIconEmpty: 'far fa-star',
     starIconFull: 'fas fa-star',
@@ -49,6 +52,12 @@ $('#reviewForm').on('submit', function (e) {
         alert("Please fill all required fields");
         return;
     }
+// validation check if limit exceed thenf orm should not submit
+if (comment.length > maxChar) {
+    alert(`Your comment exceeds the maximum limit of ${maxChar} characters.`);
+    return;
+}
+
 
     const customFormData = {
         firstName: firstName,
@@ -78,6 +87,25 @@ $('#close-custom-modal').on('click', function () {
     $('#custom-modal').fadeOut();
 });
 
+// below function helps in validation the length of textbox
+function validateTextLength() {
+   
+    const CharDisplayNo = $('#char-count');
+
+    comentTextBox.on('input', function () {
+        const currCommentLength = comentTextBox.val().length;
+
+        if (currCommentLength > maxChar) {
+            comentTextBox.css('border', '2px solid #F8AFAF');
+            CharDisplayNo.text(`Exceeded by ${currCommentLength - maxChar} characters!`)
+                         .css('color', '#F8AFAF');
+        } else {
+            comentTextBox.css('border', '');
+            CharDisplayNo.text(`${maxChar - currCommentLength} characters remaining`)
+                         .css('color', '#000000');
+        }
+    });
+}
 
 const displayTestimonialData = () => {
     const customReviews = JSON.parse(localStorage.getItem('reviews')) || [];
@@ -87,7 +115,7 @@ const displayTestimonialData = () => {
     if (customReviews.length > 0) {
         customReviews.forEach((item) => {
             const card = `
-                <div class="testimonial-card-wrapper">
+                <div class="testimonial-card">
                     <div class="testimonial-header">
                         <img src="${item.profileImage || 'default-avatar.png'}" alt="${item.firstName} ${item.lastName}" class="testimonial-image">
                         <div class="testimonial-info">
@@ -112,9 +140,13 @@ const displayTestimonialData = () => {
         `;
         getFeedbackList.append(noDataCard);
     }
-
-    console.log("Page data", customReviews);
 };
+
+$(document).ready(function() {
+    displayTestimonialData(); 
+});
+
+
 
 // a resuable custom sorting function based on rating order 
 $('#sort-feedback').on('change', function() {
@@ -137,4 +169,6 @@ $('#sort-feedback').on('change', function() {
 // Below function will execute when the page loads / refresh
 $(document).ready(function() {
     displayTestimonialData(); 
+    validateTextLength();
 });
+
