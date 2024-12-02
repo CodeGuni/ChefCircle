@@ -48,9 +48,13 @@ ChefCircle/
 │   ├── meal-planner/      # Images for Meal Planner
 │   └── community-hub/     # Images for Community Hub
 ├── components/            # Reusable components
-│   ├── navbar.html        # Navigation bar (Shared work)
 │   ├── footer.html        # Footer (Shared work)
 │   ├── recipe-card.html   # Recipe card (Shared work)
 │   └── error-modal.html   # Error handling component (Shared work)
 ├── README.md              # Project documentation
+
+ChefCircle/navbar
+│   ├── navbar.css         # Core styles with responsive layout and animations
+│   ├── navbar.html        # Navigation markup with mobile menu structure
+│   ├── navbar.js          # Mobile menu toggle and active page detection
 ```
