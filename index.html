@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Recipie hub</title>
-    <!-- CSS -->
+    <title>Recipe Hub</title>
+    <!-- External CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -21,22 +21,13 @@
                 <!-- Navigation Menu -->
                 <ul class="nav-links">
                     <li><a href="#home" class="nav-item">Home</a></li>
-                    <li><a href="#services" class="nav-item">Testimonial</a></li>
-                    <li><a href="#portfolio" class="nav-item">Single Page</a></li>
-                    <li><a href="#contact" class="nav-item">Contact</a></li>
+                    <li><a href="#mealplanner" class="nav-item">Meal Planner </a></li>
+                    <li><a href="#testimonial" class="nav-item">Comunity</a></li>
+                    <li><a href="#recipesubmission" class="nav-item">Submit Recipie</a></li>
                 </ul>
                 <!-- Action Icons -->
                 <div class="action-icons">
-                    <a href="#" class="icon-wrapper">
-                        <svg>
-                            <use xlink:href="./images/icons.svg#icon-user"></use>
-                        </svg>
-                    </a>
-                    <a href="#" class="icon-wrapper">
-                        <svg>
-                            <use xlink:href="./images/icons.svg#icon-search"></use>
-                        </svg>
-                    </a>
+                    <button id="settings-button" class="icon-wrapper"><img width="20" src="https://www.svgrepo.com/show/13688/settings.svg" alt="setting-icon" srcset=""></button>
                 </div>
             </nav>
         </div>
@@ -52,6 +43,21 @@
         </div>
     </section>
 
-    
+    <!-- SETTINGS MODAL -->
+    <div id="settings-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" id="close-modal">&times;</span>
+            <h2>Settings</h2>
+            <p>Select a background color:</p>
+            <div class="color-options">
+                <button class="color-button" data-color="#ffffff">White</button>
+                <button class="color-button" data-color="#f0f8ff">Alice Blue</button>
+                <button class="color-button" data-color="#fafad2">Light Goldenrod Yellow</button>
+                <button class="color-button" data-color="#e6e6fa">Lavender</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/js/script.js"></script>
 </body>
 </html>

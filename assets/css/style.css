@@ -147,6 +147,65 @@ body {
     background-color: var(--secondary-color);
 }
 
+/* setting modal css starts here  */
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 300px;
+}
+
+.modal-content {
+    text-align: center;
+}
+
+.color-options {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.color-button {
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.color-button[data-color="#ffffff"] {
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+}
+
+.color-button[data-color="#f0f8ff"] {
+    background-color: #f0f8ff;
+}
+
+.color-button[data-color="#fafad2"] {
+    background-color: #fafad2;
+}
+
+.color-button[data-color="#e6e6fa"] {
+    background-color: #e6e6fa;
+}
+
+.close-modal {
+    float: right;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .nav-links {
