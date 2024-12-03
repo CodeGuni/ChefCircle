@@ -1,11 +1,11 @@
-/* Global reset */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Body and global styling */
+
 body {
     font-family: 'Arial', sans-serif;
     background-color: #f9f9fb;
@@ -13,7 +13,7 @@ body {
     line-height: 1.6;
 }
 
-/* Navbar Styling */
+
 .navbar {
     background: #007bff;
     color: white;
@@ -75,7 +75,7 @@ h2 {
     padding: 0 0.5rem;
 }
 
-/* Form Layout */
+
 .form-wrap {
     display: flex;
     gap: 1rem;
@@ -105,7 +105,7 @@ label {
     font-size: 1rem;
     border: 1px solid #ccc;
     border-radius: 4px;
-    width: 100%; /* Ensure inputs take full width of their container */
+    width: 100%; 
     transition: border 0.3s;
 }
 
@@ -143,7 +143,7 @@ textarea.form-control {
     transform: scale(1.05);
 }
 
-/* Overall container for the testimonials */
+/* css for testimonial card */
 .testimonials-section {
    
         margin: 2rem auto;
@@ -155,23 +155,36 @@ textarea.form-control {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Flexbox container for the testimonial cards */
+
 #review-list {
     display: flex;
+  
     gap: 20px;
-    padding: 1rem;
-    overflow-x: scroll; /* Horizontal scroll */
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-    justify-content: flex-start;
-    scrollbar-width: none; 
-    -ms-overflow-style: none; 
+    overflow-y: hidden; /* Prevent vertical scrolling */
+    max-height: 800px; /* Adjust based on your design */
 }
+
+.js-wc-rating-value {
+    display: none;
+}
+
+
 
 #review-list::-webkit-scrollbar {
     display: none; 
 }
-/* Styling for each testimonial card */
+.testimonial-card {
+    display: none; /* Initially hide all cards */
+    transition: opacity 0.6s ease-in-out; /* Smooth transition effect */
+}
+
+.testimonial-comment {
+    font-size: 1rem;
+    color: #555;
+    text-align: center;
+    margin-top: 1rem;
+    line-height: 1.5;
+}
 .testimonial-card {
     min-width: 300px;
     max-width: 400px; 
@@ -187,16 +200,17 @@ textarea.form-control {
     scroll-snap-align: start; 
 }
 
-/* Styling for the testimonial image */
+
 .testimonial-card img {
     width: 100%;
+    height: 96px;
     max-width: 150px;
     border-radius: 50%;
     margin-bottom: 1rem;
     object-fit: cover;
 }
 
-/* Title of the testimonial */
+
 .testimonial-card h4 {
     font-size: 1.2rem;
     color: #007bff;
@@ -205,7 +219,43 @@ textarea.form-control {
     text-align: center;
 }
 
-/* Rating styling */
+.slider-wrapper {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+
+.slider-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.testimonial-card {
+    flex: 0 0 33.33%;
+    max-width: 33.33%;
+    padding: 10px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+@media (max-width: 768px) {
+    .testimonial-card {
+        flex: 0 0 50%; 
+        max-width: 50%;
+    }
+}
+
+@media (max-width: 480px) {
+    .testimonial-card {
+        flex: 0 0 100%; 
+        max-width: 100%;
+    }
+}
+
+
+
 .testimonial-card .rating {
     font-size: 1.1rem;
     color: #ffc107;
@@ -221,20 +271,23 @@ textarea.form-control {
     line-height: 1.5;
 }
 
-/* Ensuring responsiveness on smaller screens */
 @media (max-width: 768px) {
     #review-list {
-        flex-wrap: nowrap; 
+        flex-direction: row;
+        overflow-x: auto;
     }
 
     .testimonial-card {
-        min-width: 250px; 
+        min-width: 250px;
+        flex-shrink: 0;
     }
 }
 
+
+
 @media (max-width: 480px) {
     .testimonial-card {
-        min-width: 200px; /* Cards will be smaller on very small screens */
+        min-width: 200px; 
     }
 }
 
@@ -263,6 +316,7 @@ textarea.form-control {
 }
 
 .rating.js-wc-star-rating {
+    padding: 20px;
     width: 100%;
     border: 2px solid #949494;
     background-color: #f0eeee;

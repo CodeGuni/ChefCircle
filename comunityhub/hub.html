@@ -6,7 +6,7 @@
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <title>Community Hub - Feedback</title>
     <!-- Styling -->
-    <link rel="stylesheet" href="jquery-ui-1.12.1.custom/jquery-ui.min.css">
+    <!-- <link rel="stylesheet" href="jquery-ui-1.12.1.custom/jquery-ui.min.css"> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" 
           integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" 
           crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -96,16 +96,23 @@
                 </div>
             </section>
 
-            <!-- custom modal popup  -->
-            <div id="custom-modal" class="custom-modal">
-                <div class="custom-modal-content">
-                    <h3>Thank You for Your Feedback!</h3>
-                    <p>Your review has been submitted successfully.</p>
-                    <button id="close-custom-modal" class="custom-btn">Close</button>
-                </div>
-            </div>
-            
+           <!-- Submit Success Modal -->
+<div id="submit-success-modal" class="custom-modal">
+    <div class="custom-modal-content">
+        <h3>Thank You for Your Feedback!</h3>
+        <p>Your review has been submitted successfully.</p>
+        <button id="close-submit-modal" class="custom-btn">Close</button>
+    </div>
+</div>
 
+<!-- Preview Modal -->
+<div id="preview-modal" class="custom-modal">
+    <div class="custom-modal-content">
+        <div id="preview-content"></div>
+        <button id="close-preview-modal" class="custom-btn">Close</button>
+    </div>
+</div>
+            
         </main>
 
         <!-- Scripts -->
