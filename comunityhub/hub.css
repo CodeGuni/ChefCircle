@@ -1,4 +1,17 @@
+/* Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
 
+/* Variables and color checked by contrast checker */
+:root {
+    --primary-color: #004B85;
+    --secondary-color: #1a1a1a;
+    --background-color: #f4f4f4;
+    --light-color: #ffffff;
+    --dark-color: #000000;
+    --font-family: 'Poppins', sans-serif;
+    --font-size-base: 16px;
+    --spacing: 1rem;
+}
 * {
     margin: 0;
     padding: 0;
@@ -14,19 +27,81 @@ body {
 }
 
 
-.navbar {
-    background: #007bff;
-    color: white;
-    display: flex;
-    justify-content: space-between;
-    padding: 1rem 2rem;
-    align-items: center;
+/* Header */
+.global-header {
+    background-color: var(--light-color);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
-.navbar .logo {
-    font-size: 1.5rem;
-    font-weight: bold;
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing);
 }
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing);
+}
+
+.logo-link {
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+.logo-link span {
+    color: var(--secondary-color);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-item {
+    text-decoration: none;
+    color: var(--secondary-color);
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-item:hover {
+    color: var(--primary-color);
+}
+
+.action-icons {
+    display: flex;
+    gap: 1rem;
+}
+
+.icon-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    border: 1px solid var(--primary-color);
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+}
+
+.icon-wrapper:hover {
+    transform: scale(1.1);
+}
+
+
+
+
 
 .nav-menu {
     list-style: none;
