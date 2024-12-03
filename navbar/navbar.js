@@ -4,7 +4,7 @@
  * Initializes navbar functionality after loading.
  */
 function loadNavbar() {
-    fetch('navbar.html')
+    fetch('../navbar/navbar.html')
         .then(response => response.text())
         .then(data => {
             document.body.insertAdjacentHTML('afterbegin', data);  // Add navbar to the page

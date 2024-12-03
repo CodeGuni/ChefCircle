@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipes</title>
+    
+    <!-- navbar styling -->
+    <link rel="stylesheet" href="../navbar/navbar.css">
+   
+    <!-- load navbar and its functionality -->
+    <script src="../navbar/navbar.js"></script>
+</head>
+<body>
+    <!-- Main content wrapper, contains the search, filter, and recipe display sections -->
+    <div class="content-wrapper">
+        
+        <!-- Search and filter section for users to find recipes based on categories and cooking time -->
+        <div class="search-section">
+            <div class="search-bar">
+                <input type="text" id="searchInput" placeholder="Search recipes...">
+            </div>
+
+            <div class="filters">
+                <!-- Filter group for categories and cooking time -->
+                <div class="filter-group">
+                    <select id="categoryFilter">
+                        <option value="">All Categories</option>
+                        <option value="breakfast">Breakfast</option>
+                        <option value="lunch">Lunch</option>
+                        <option value="dinner">Dinner</option>
+                        <option value="dessert">Dessert</option>
+                    </select>
+                    <select id="timeFilter">
+                        <option value="">Cooking Time</option>
+                        <option value="15">Under 15 mins</option>
+                        <option value="30">Under 30 mins</option>
+                        <option value="60">Under 1 hour</option>
+                    </select>
+                </div>
+
+                <!-- View type, dark mode, and actions -->
+                <div class="view-controls">
+                    <button id="gridViewBtn" class="control-btn active">Grid View 📱</button>
+                    <button id="listViewBtn" class="control-btn">List View 📄</button>
+                    <button id="darkModeToggle" class="control-btn">Dark Mode 🌙</button>
+                </div>
+
+                <!-- Action controls for random recipe and resetting filters -->
+                <div class="action-controls">
+                    <button id="surpriseMe" class="action-btn">Surprise Me! 🎲</button>
+                    <button id="resetRecipes" class="action-btn">Reset All 🔄</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Container where recipes will be displayed dynamically -->
+        <main class="recipes-container grid-view">
+            <!-- Recipes will be inserted here -->
+        </main>
+    </div>
+
+    <!-- Template for a recipe card, which will be reused dynamically -->
+    <template id="recipe-template">
+        <article class="recipe-card">
+            <div class="recipe-image">
+                <img src="" alt="">
+            </div>
+            <div class="recipe-content">
+                <h2 class="recipe-title"></h2>
+                <div class="recipe-metadata">
+                    <span class="cooking-time"></span>
+                    <span class="rating"></span>
+                </div>
+                <p class="recipe-description"></p>
+                <div class="recipe-details hidden">
+                    <div class="ingredients">
+                        <h3>Ingredients</h3>
+                        <ul class="ingredients-list"></ul>
+                    </div>
+                    <div class="instructions">
+                        <h3>Instructions</h3>
+                        <ol class="instructions-list"></ol>
+                    </div>
+                </div>
+                <div class="recipe-actions">
+                    <button class="view-recipe">View Recipe</button>
+                    <button class="print-recipe">🖨️</button>
+                    <button class="favorite-recipe">🤍</button>
+                </div>
+            </div>
+        </article>
+    </template>
+</body>
+</html>
