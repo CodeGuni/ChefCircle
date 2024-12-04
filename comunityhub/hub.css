@@ -315,6 +315,8 @@ textarea.form-control {
     justify-content: space-between;
 }
 
+
+
 @media (max-width: 768px) {
     .testimonial-card {
         flex: 0 0 50%; 
