@@ -41,6 +41,7 @@ $('#profile_image').on('change', function () {
     }
 });
 
+// Show modal on form submit
 $('#reviewForm').on('submit', function (e) {
     e.preventDefault();
     
@@ -82,11 +83,19 @@ $('#reviewForm').on('submit', function (e) {
 
     $('#submit-success-modal').fadeIn();
 
-    // Auto-close modal after 3 seconds
+    //  modal after 3 seconds should close auto
     setTimeout(function () {
         $('#submit-success-modal').fadeOut();
+        displayTestimonialData(); 
     }, 3000);
 });
+
+// Close Submit Success Modal
+$('#close-submit-modal').on('click', function () {
+    $('#submit-success-modal').fadeOut();
+    displayTestimonialData(); 
+});
+
 
 // Close Submit Success Modal
 $('#close-submit-modal').on('click', function () {
@@ -114,9 +123,8 @@ function validateTextLength() {
     });
 }
 
-// unique preview featrue fucnitonality to show how it will look befor submit 
-// Preview feature for reviews
-// Preview Modal
+// unique preview feature functionality to show how it will look befor submit 
+
 $('#preview-button').on('click', function () {
     const firstName = $('#first-name').val().trim();
     const lastName = $('#last-name').val().trim();
@@ -206,7 +214,7 @@ function customSliderStart() {
     const totalTestimonials = testimonials.length;
     let currentIndex = 0;
 
-    if (totalTestimonials > 3) {
+    if (totalTestimonials > 2) {
        
         $('#review-list').addClass('slider-wrapper');
 
