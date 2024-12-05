@@ -1,0 +1,67 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background-color: #f5f5f5;
+}
+:root {
+    --underline-color: #e67e22;
+    --primary-color: #e67e22;
+    --primary-color-hover: #f39c12;
+}
+.add_button {
+    text-align: right;
+    padding: 16px 16px 0 0;
+}
+button {
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: var(--primary-color);
+    color: #fff;
+    cursor: pointer;
+}
+button:hover {
+    background-color: var(--primary-color-hover);
+}
+
+.calendar_table {
+    width: 97%;
+    margin: 20px;
+    overflow-x: scroll;
+}
+
+table {
+    border-collapse: collapse;
+    width: 80%;
+    background-color: #ffffff;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    
+}
+
+th, td {
+    border: 1px solid #ddd;
+    text-align: center;
+    padding: 10px;
+}
+
+th {
+    background-color: var(--underline-color);
+    color: white;
+}
+
+td {
+    background-color: #f9f9f9;
+    cursor: pointer;
+}
+
+td:hover {
+    background-color: #f0f0f0;
+}
+
+ .row-label {
+    background-color: #666;
+    color: white;
+    font-weight: bold;
+}
