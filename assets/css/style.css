@@ -150,7 +150,7 @@ body {
 /* setting modal css starts here  */
 
 /* Modal */
-.modal {
+.setting-modal {
     display: none;
     position: fixed;
     top: 50%;
@@ -159,9 +159,10 @@ body {
     z-index: 1000;
     background-color: #fff;
     padding: 20px;
+    border: 1px solid #ccc;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    width: 300px;
+    width: 402px;
 }
 
 .modal-content {
