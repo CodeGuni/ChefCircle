@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <title>Community Hub - Feedback</title>
+    <!-- <link rel="stylesheet" href="jquery-ui-1.12.1.custom/jquery-ui.min.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" 
+          integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" 
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="hub.css">
+</head>
+<body>
+    <div id="respond" class="container_wrap_wrap">
+        <!-- Navigation Bar -->
+        <!-- HEADER -->
+    <header class="global-header">
+        <div class="container">
+            <nav class="navbar">
+                <!-- Logo -->
+                <div class="logo-container">
+                    <a href="/" class="logo-link">Recipe<span>Hub</span></a>
+                </div>
+                <!-- Navigation Menu -->
+                <ul class="nav-links">
+                    <li><a href="#home" class="nav-item">Home</a></li>
+                    <li><a href="#services" class="nav-item">Testimonial</a></li>
+                    <li><a href="#portfolio" class="nav-item">Single Page</a></li>
+                    <li><a href="#contact" class="nav-item">Contact</a></li>
+                </ul>
+                <!-- Action Icons -->
+                <div class="action-icons">
+                    <a href="#" class="icon-wrapper">
+                        <svg>
+                            <use xlink:href="./images/icons.svg#icon-user"></use>
+                        </svg>
+                    </a>
+                    <a href="#" class="icon-wrapper">
+                        <svg>
+                            <use xlink:href="./images/icons.svg#icon-search"></use>
+                        </svg>
+                    </a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+
+        <!-- Main Content -->
+        <main>
+            <!-- Form Section -->
+            <section id="form-section" class="form-section">
+                <div class="container">
+                    <h2>Add Your Review</h2>
+                    <form id="reviewForm" class="review-form">
+                        <fieldset>
+                            <legend>Share Your Experience</legend>
+                            <div class="form-wrap">
+                                <div class="form-group">
+                                    <label for="first-name">First Name</label>
+                                    <input type="text" id="first-name" class="form-control" placeholder="First Name">
+                                </div>
+                                <div class="form-group">
+                                    <label for="last-name">Last Name</label>
+                                    <input type="text" id="last-name" class="form-control" placeholder="Last Name">
+                                </div>
+                            </div>
+                            <div class="form-wrap">
+                                <div class="form-group">
+                                    <label for="email">Email</label>
+                                    <input type="email" id="email" class="form-control" placeholder="Enter your email">
+                                </div>
+                                <div class="form-group">
+                                    <label for="profile_image">Upload your image</label>
+                                    <input type="file" accept="image/*" id="profile_image" class="form-control">
+                                    <div id="image-preview"></div>
+                                </div>
+                            </div>
+                            <div class="form-wrap">
+                                <label for="comment">Leave a comment</label>
+                                <textarea id="comment" class="form-control" placeholder="Write your comment"></textarea>
+                                <div id="char-count-container_wrap">
+                                    <span id="char-count">250 characters remaining</span>
+                                </div>
+                            </div>
+                            <div class="form-wrap">
+                                <div class="rating"></div>
+                                <input type="hidden" id="ratingValue">
+                            </div>
+                            <div class="form-btn-wrapper">
+                                <div>
+                                    <button type="submit" id="submit-button" class="btn">Submit Review</button>
+                                </div>
+                                <div>
+                                    <button type="button" id="preview-button" class="btn">Preview</button>
+                                </div>
+                             
+                            </div>
+                           
+                        </fieldset>
+                    </form>
+                </div>
+            </section>
+
+            <!-- Testimonials Section -->
+            <section id="testimonials-section" class="testimonials-section">
+                <div class="container">
+                    <h2>Testimonials</h2>
+                    <div class="sort-feedback">
+                        <label for="sort-feedback">Sort by:</label>
+                        <select id="sort-feedback">
+                            <option value="newest">Newest</option>
+                            <option value="oldest">Oldest</option>
+                            <option value="highest">Highest Rating</option>
+                            <option value="lowest">Lowest Rating</option>
+                        </select>
+                    </div>
+                    <div id="review-list" class="all-review-wrapper"></div>
+                </div>
+            </section>
+
+           <!-- Submit Success Modal -->
+<div id="submit-success-modal" class="custom-modal">
+    <div class="custom-modal-content">
+        <h3>Thank You for Your Feedback!</h3>
+        <p>Your review has been submitted successfully.</p>
+        <button id="close-submit-modal" class="custom-btn">Close</button>
+    </div>
+</div>
+
+<!-- Preview Modal -->
+<div id="preview-modal" class="custom-modal">
+    <div class="custom-modal-content">
+        <div id="preview-content"></div>
+        <button id="close-preview-modal" class="custom-btn">Close</button>
+    </div>
+</div>
+            
+        </main>
+
+        <!-- Scripts -->
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="./dist/jquery-star.js"></script>
+        <script src="hub.js"></script>
+    </div>
+</body>
+</html>
