@@ -3,26 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Recipes</title>
-    
-    <!-- navbar styling -->
+    <title>Recipe Explorer</title>
     <link rel="stylesheet" href="../navbar/navbar.css">
-   
-    <!-- load navbar and its functionality -->
-    <script src="../navbar/navbar.js"></script>
+    <link rel="stylesheet" href="explore.css">
 </head>
 <body>
-    <!-- Main content wrapper, contains the search, filter, and recipe display sections -->
+    <!-- Main Content -->
     <div class="content-wrapper">
-        
-        <!-- Search and filter section for users to find recipes based on categories and cooking time -->
+        <!-- Search and Filters -->
         <div class="search-section">
             <div class="search-bar">
                 <input type="text" id="searchInput" placeholder="Search recipes...">
             </div>
-
             <div class="filters">
-                <!-- Filter group for categories and cooking time -->
                 <div class="filter-group">
                     <select id="categoryFilter">
                         <option value="">All Categories</option>
@@ -37,16 +30,19 @@
                         <option value="30">Under 30 mins</option>
                         <option value="60">Under 1 hour</option>
                     </select>
+                    <div class="calorie-filter">
+                        <input type="range" id="calorieSlider" min="0" max="1000" step="50" value="1000">
+                        <div class="calorie-display">
+                            <span>Calories: </span>
+                            <span id="calorieValue">1000</span>
+                            <span> kcal or less</span>
+                        </div>
+                    </div>
                 </div>
-
-                <!-- View type, dark mode, and actions -->
                 <div class="view-controls">
                     <button id="gridViewBtn" class="control-btn active">Grid View 📱</button>
                     <button id="listViewBtn" class="control-btn">List View 📄</button>
-                    <button id="darkModeToggle" class="control-btn">Dark Mode 🌙</button>
                 </div>
-
-                <!-- Action controls for random recipe and resetting filters -->
                 <div class="action-controls">
                     <button id="surpriseMe" class="action-btn">Surprise Me! 🎲</button>
                     <button id="resetRecipes" class="action-btn">Reset All 🔄</button>
@@ -54,23 +50,32 @@
             </div>
         </div>
 
-        <!-- Container where recipes will be displayed dynamically -->
+        <!-- Recipe Container -->
         <main class="recipes-container grid-view">
             <!-- Recipes will be inserted here -->
         </main>
     </div>
 
-    <!-- Template for a recipe card, which will be reused dynamically -->
+    <!-- Recipe Template -->
     <template id="recipe-template">
         <article class="recipe-card">
             <div class="recipe-image">
                 <img src="" alt="">
+                <!-- Add nutrition modal that shows on hover -->
+                <div class="nutrition-modal">
+                    <h3>Nutrition Information</h3>
+                    <p>Calories: <span class="nutrition-calories"></span> kcal</p>
+                    <p>Protein: <span class="nutrition-protein"></span>g</p>
+                    <p>Carbs: <span class="nutrition-carbs"></span>g</p>
+                    <p>Fat: <span class="nutrition-fat"></span>g</p>
+                </div>
             </div>
             <div class="recipe-content">
                 <h2 class="recipe-title"></h2>
                 <div class="recipe-metadata">
                     <span class="cooking-time"></span>
                     <span class="rating"></span>
+                    <span class="calories"></span>
                 </div>
                 <p class="recipe-description"></p>
                 <div class="recipe-details hidden">
@@ -85,11 +90,34 @@
                 </div>
                 <div class="recipe-actions">
                     <button class="view-recipe">View Recipe</button>
-                    <button class="print-recipe">🖨️</button>
                     <button class="favorite-recipe">🤍</button>
                 </div>
             </div>
         </article>
     </template>
+    <div id="recipeModal" class="recipe-modal hidden">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-body">
+                <h2 class="modal-title"></h2>
+                <div class="modal-details">
+                    <div class="ingredients-section">
+                        <h3>Ingredients</h3>
+                        <ul class="modal-ingredients"></ul>
+                    </div>
+                    <div class="instructions-section">
+                        <h3>Instructions</h3>
+                        <ol class="modal-instructions"></ol>
+                    </div>
+                </div>
+                <button id="modalDownloadBtn" class="modal-download-btn">Download Recipe</button>
+           
+            </div>
+        </div>
+    </div>
+   
+    <script src="../navbar/navbar.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="module" src="explore.js"></script>
 </body>
 </html>

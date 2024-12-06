@@ -1,0 +1,483 @@
+/* Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+/* Variables and color checked by contrast checker */
+:root {
+    --primary-color: #004B85;
+    --secondary-color: #1a1a1a;
+    --background-color: #f4f4f4;
+    --light-color: #ffffff;
+    --dark-color: #000000;
+    --font-family: 'Poppins', sans-serif;
+    --font-size-base: 16px;
+    --spacing: 1rem;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f9fb;
+    color: #333;
+    line-height: 1.6;
+}
+
+
+/* Header */
+.global-header {
+    background-color: var(--light-color);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing);
+}
+
+.logo-link {
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+.logo-link span {
+    color: var(--secondary-color);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-item {
+    text-decoration: none;
+    color: var(--secondary-color);
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-item:hover {
+    color: var(--primary-color);
+}
+
+.action-icons {
+    display: flex;
+    gap: 1rem;
+}
+
+.icon-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    border: 1px solid var(--primary-color);
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+}
+
+.icon-wrapper:hover {
+    transform: scale(1.1);
+}
+
+
+
+
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav-menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s;
+}
+
+.nav-menu a:hover {
+    color: #ccc;
+}
+
+/* Form Section */
+.form-section {
+    background: #fff;
+    padding: 2rem;
+    margin: 2rem auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #007bff;
+}
+
+.review-form fieldset {
+    border: 2px solid #007bff;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.review-form legend {
+    font-size: 1.2rem;
+    color: #007bff;
+    font-weight: bold;
+    padding: 0 0.5rem;
+}
+
+
+.form-wrap {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+}
+
+.form-group {
+    flex: 1;
+    min-width: calc(50% - 1rem);
+    max-width: 100%;
+}
+
+@media (max-width: 768px) {
+    .form-group {
+        min-width: 100%;
+    }
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.form-control {
+    padding: 0.6rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+    transition: border 0.3s;
+}
+
+.form-control:focus {
+    border: 1px solid #007bff;
+    outline: none;
+}
+
+textarea.form-control {
+    height: 80px;
+    resize: none;
+}
+
+/* Character Count */
+#char-count-container_wrap {
+    margin-top: 0.5rem;
+    text-align: right;
+}
+
+/* Submit Button */
+.btn {
+    background: #007bff;
+    color: white;
+    padding: 0.7rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.btn:hover {
+    background: #0056b3;
+    transform: scale(1.05);
+}
+
+/* css for testimonial card */
+.testimonials-section {
+
+    margin: 2rem auto;
+    max-width: 1100px;
+    padding: 2rem;
+    background: #fff;
+    border-radius: 8px;
+    margin: 2rem auto;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+#review-list {
+    display: flex;
+
+    gap: 20px;
+    overflow-y: hidden;
+    max-height: 800px;
+}
+
+.js-wc-rating-value {
+    display: none;
+}
+
+
+
+#review-list::-webkit-scrollbar {
+    display: none;
+}
+
+.testimonial-card {
+    display: none;
+    transition: opacity 0.6s ease-in-out;
+}
+
+.testimonial-comment {
+    font-size: 1rem;
+    color: #555;
+    text-align: center;
+    margin-top: 1rem;
+    line-height: 1.5;
+}
+
+.testimonial-card {
+    min-width: 300px;
+    max-width: 400px;
+    background: #fff;
+    border: 2px solid #007bff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-shrink: 0;
+    scroll-snap-align: start;
+}
+
+
+.testimonial-card img {
+    width: 100%;
+    height: 96px;
+    max-width: 150px;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+    object-fit: cover;
+}
+
+
+.testimonial-card h4 {
+    font-size: 1.2rem;
+    color: #007bff;
+    margin: 0;
+    font-weight: bold;
+    text-align: center;
+}
+
+.slider-wrapper {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+
+.slider-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.testimonial-card {
+    flex: 0 0 33.33%;
+    max-width: 33.33%;
+    padding: 10px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+@media (max-width: 768px) {
+    .testimonial-card {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+}
+
+@media (max-width: 480px) {
+    .testimonial-card {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
+
+
+
+.testimonial-card .rating {
+    font-size: 1.1rem;
+    color: #ffc107;
+    margin: 0.5rem 0;
+}
+
+/* Testimonial comment */
+.testimonial-card p {
+    font-size: 1rem;
+    color: #555;
+    text-align: center;
+    margin-top: 1rem;
+    line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+    #review-list {
+        flex-direction: row;
+        overflow-x: auto;
+    }
+
+    .testimonial-card {
+        min-width: 250px;
+        flex-shrink: 0;
+    }
+}
+
+
+
+@media (max-width: 480px) {
+    .testimonial-card {
+        min-width: 200px;
+    }
+}
+
+
+.sort-feedback {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 1rem;
+}
+
+.feedback-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+#image-preview {
+    margin-top: 1rem;
+    text-align: center;
+    max-width: 100%;
+}
+
+.form-btn-wrapper {
+    display: flex;
+    gap: 20px;
+}
+
+.rating.js-wc-star-rating {
+    padding: 20px;
+    width: 100%;
+    border: 2px solid #949494;
+    background-color: #f0eeee;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 12px;
+}
+
+#image-preview img {
+    max-width: 200px;
+    max-height: 100px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    object-fit: cover;
+    margin-top: 1rem;
+}
+
+.testimonial-card.no-data {
+    text-align: center;
+    padding: 20px;
+    border: 2px dashed #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    margin: 20px auto;
+    max-width: 600px;
+}
+
+.no-data-image {
+    max-width: 100px;
+    margin: 10px auto;
+    display: block;
+    opacity: 0.8;
+}
+
+.testimonial-card.no-data p {
+    font-size: 1.2em;
+    color: #555;
+    margin-top: 10px;
+}
+
+/* custom modal css  */
+.custom-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding-top: 100px;
+}
+
+.custom-modal-content {
+    background-color: white;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+    width: 80%;
+    max-width: 400px;
+}
+
+.custom-modal h3 {
+    margin-bottom: 15px;
+    color: #28a745;
+}
+
+.custom-modal p {
+    margin-bottom: 20px;
+}
+
+.custom-btn {
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.custom-btn:hover {
+    background-color: #218838;
+}
