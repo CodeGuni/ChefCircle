@@ -1,9 +1,9 @@
 body {
     font-family: Arial, sans-serif;
-    margin: 0;
+    margin-top: 90px;
     padding: 0;
     height: 100vh;
-    background-color: #f5f5f5;
+    background-color: #898989;
 }
 :root {
     --underline-color: #e67e22;
@@ -53,7 +53,8 @@ th {
 
 td {
     background-color: #f9f9f9;
-    cursor: pointer;
+    width: 150px;
+    height: 70px;
 }
 
 td:hover {

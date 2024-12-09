@@ -1,0 +1,56 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+button {
+    margin-bottom: 20px;
+}
+
+.card {
+    background-color: #f1f1f1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    margin-top: 10px;
+    position: relative;
+}
+
+.card .edit-btn, .card .delete-btn {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.card .edit-btn {
+    right: 35px;
+}
+
+.ui-dialog-titlebar {
+    background: #4CAF50;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.ui-dialog-title {
+    font-size: 18px;
+}
