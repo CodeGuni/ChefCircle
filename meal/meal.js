@@ -2,6 +2,7 @@ $(document).ready(function () {
     const daysInMonth = 31;
     const monthName = "December";
     const meals = ["Breakfast", "Lunch", "Dinner"];
+    let currentId = localStorage.length + 1; // To create a unique id for each menu item
 
     // Generate calendar table
     const table = $("#recipe-calendar");
@@ -45,8 +46,8 @@ $(document).ready(function () {
         const menuTitle = $("#menuTitle").val();
         const isEdit = $("#editMode").val() === "true";
 
-        const storageKey = `menu_${menuDate}_${mealType}`;
-        const menuData = { date: menuDate, mealType, menuTitle };
+        const storageKey = `menu_${currentId}`;
+        const menuData = { id: currentId, date: menuDate, mealType, menuTitle };
 
         if (isEdit) {
             const prevKey = $("#editMode").data("prevKey");
@@ -57,17 +58,16 @@ $(document).ready(function () {
             updateCardInTable(day, capitalize(mealType), menuTitle);
         } else {
             localStorage.setItem(storageKey, JSON.stringify(menuData));
-            addCardToTable(day, capitalize(mealType), menuTitle);
+            addCardToTable(day, capitalize(mealType), menuTitle, storageKey);
+            currentId++; // Increment ID for the next menu item
         }
 
         $("#menuForm").dialog("close");
     });
 
     // Add a card to the table
-    function addCardToTable(day, mealType, menuTitle) {
+    function addCardToTable(day, mealType, menuTitle, storageKey) {
         const targetCell = $(`.cell[data-x="${day}"][data-y="${mealType}"]`);
-        const storageKey = `menu_${day}_${mealType.toLowerCase()}`;
-
         if (targetCell.length > 0) {
             const cardHtml = `
                 <div class="card" data-key="${storageKey}">
@@ -139,7 +139,7 @@ $(document).ready(function () {
                 const menuData = JSON.parse(localStorage.getItem(key));
                 const day = String(Number(menuData.date.split("/")[1])).padStart(2, "0");
                 const mealType = capitalize(menuData.mealType);
-                addCardToTable(day, mealType, menuData.menuTitle);
+                addCardToTable(day, mealType, menuData.menuTitle, key);
             }
         }
     }
