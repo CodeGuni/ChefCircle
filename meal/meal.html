@@ -11,13 +11,13 @@
 <body>
     <div class="add_button">
         <button id="addRecipeBtn">Add Recipe</button>
-        <button id="insertDivBtn">Insert Div</button>
+        <!-- <button id="insertDivBtn">Insert Div</button> -->
     </div>
     <div class="calendar_table">
         <table id="recipe-calendar"></table>
     </div>
     <!-- Form for adding menu -->
-    <div id="menuForm" title="Add Menu">
+    <!-- <div id="menuForm" title="Add Menu">
         <form id="menuFormContent">
             <label for="menuDate">Date:</label>
             <input type="text" id="menuDate" name="menuDate" class="datepicker" required><br><br>
@@ -34,7 +34,28 @@
 
             <input type="submit" value="Add Menu">
         </form>
+    </div> -->
+    <!-- Form for adding and editing menu -->
+    <div id="menuForm" title="Add/Edit Menu">
+        <form id="menuFormContent">
+            <input type="hidden" id="editMode" name="editMode" value="false"> <!-- Hidden input for edit mode -->
+            <label for="menuDate">Date:</label>
+            <input type="text" id="menuDate" name="menuDate" class="datepicker" required><br><br>
+
+            <label for="mealType">Meal Type:</label>
+            <select id="mealType" name="mealType" required>
+                <option value="breakfast">Breakfast</option>
+                <option value="lunch">Lunch</option>
+                <option value="dinner">Dinner</option>
+            </select><br><br>
+
+            <label for="menuTitle">Menu Title:</label>
+            <input type="text" id="menuTitle" name="menuTitle" required><br><br>
+
+            <input type="submit" value="Save">
+        </form>
     </div>
+
 </body>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
