@@ -26,6 +26,10 @@ button:hover {
     background-color: var(--primary-color-hover);
 }
 
+#menuFormContent div{
+    margin: 16px 0;
+}
+
 .calendar_table {
     width: 97%;
     margin: 20px;
@@ -68,35 +72,64 @@ td:hover {
 }
 
 .card {
+    width: 120px;
+    height: 90px;
     border: 1px solid #ddd;
     padding: 8px;
     margin: 5px;
-    background-color: #f9f9f9;
+    background-color: #e8e8e8;
     border-radius: 4px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    position: relative;
 }
 
-.card .menuTitle {
+.card .recipeName {
+    margin-top: 25px;
     font-weight: bold;
     margin-bottom: 5px;
 }
 
 .card button {
-    margin-right: 5px;
-    padding: 5px 10px;
-    border: none;
-    background-color: #007bff;
-    color: white;
-    border-radius: 3px;
-    cursor: pointer;
+    font-size: 10px;
 }
 
-.card button.delete-btn {
-    background-color: #dc3545;
+.card .madeBtn {
+    padding: 5px 10px;
+}
+
+.card .editBtn {
+    padding: 5px 10px;
+    position: absolute;
+    right: 30px;
+    background-color: #409ff7;
+}
+
+.card .deleteBtn {
+    text-align: center;
+    padding: 5px;
+    background-color: #c34b3b;
+    position: absolute;
+    right: 5px;
+    width: 20px;
+    height: 20px;
+    border-radius: 100px;
 }
 
 .card button:hover {
     opacity: 0.8;
+}
+
+.secondPart {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    row-gap: 10px;
+    margin: 20px;
+}
+.secondPart div {
+    width: 48%;
+    background-color: #e67e22;
+    border-radius: 10px;
 }

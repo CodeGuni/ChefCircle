@@ -22,12 +22,15 @@ $(document).ready(function () {
     });
     tbody += "</tbody>";
     table.append(tbody);
-    // Dialog setup
     $("#menuForm").dialog({
         autoOpen: false,
         width: 400,
         modal: true,
+        open: function () {
+            $("#menuDate").blur();
+        }
     });
+    
     // Open "Add Menu" 
     $("#addRecipeBtn").click(function () {
         openMenuForm("Add Menu", false);
@@ -38,79 +41,112 @@ $(document).ready(function () {
         const menuDate = $("#menuDate").val(); 
         const day = String(Number(menuDate.split("/")[1])).padStart(2, "0");
         const mealType = $("#mealType").val();
-        const menuTitle = $("#menuTitle").val();
+        const recipeName = $("#recipeName").val();
+        const foodMateria = $("#foodMateria").val();
+        const preparationProcedure = $("#preparationProcedure").val();
         const isEdit = $("#editMode").val() === "true";
         const storageKey = `menu_${currentId}`;
-        const menuData = { id: currentId, date: menuDate, mealType, menuTitle };
+        const recipeData = { 
+            id: currentId, 
+            date: menuDate, 
+            mealType, 
+            recipeName, 
+            foodMateria,
+            preparationProcedure
+          };
         if (isEdit) {
             const prevKey = $("#editMode").data("prevKey");
             // Remove old data if key has changed
             if (prevKey && prevKey !== storageKey) {         
                 localStorage.removeItem(prevKey); 
             }
-            localStorage.setItem(storageKey, JSON.stringify(menuData));
-            updateCardInTable(day, capitalize(mealType), menuTitle);
+            localStorage.setItem(storageKey, JSON.stringify(recipeData));
+            updateCardInTable(day, capitalize(mealType), recipeName);
         } else {
-            localStorage.setItem(storageKey, JSON.stringify(menuData));
-            addCardToTable(day, capitalize(mealType), menuTitle, storageKey);
+            localStorage.setItem(storageKey, JSON.stringify(recipeData));
+            addCardToTable(day, capitalize(mealType), recipeName, storageKey);
             currentId++; 
         }
         $("#menuForm").dialog("close");
     });
     // Add a card to the table
-    function addCardToTable(day, mealType, menuTitle, storageKey) {
+    function addCardToTable(day, mealType, recipeName, storageKey) {
         const targetCell = $(`.cell[data-x="${day}"][data-y="${mealType}"]`);
         if (targetCell.length > 0) {
             const cardHtml = `
                 <div class="card" data-key="${storageKey}">
-                    <div class="menuTitle">${menuTitle}</div>
+                    <div class="recipeName">${recipeName}</div>
                     <button class="editBtn">Edit</button>
-                    <button class="deleteBtn">Delete</button>
+                    <button class="deleteBtn">X</button>
+                    <button class="madeBtn">I want to make it!</button>
                 </div>
             `;
             targetCell.html(cardHtml);
-            // Delete button functionality
+            // click delete button
             targetCell.find(".deleteBtn").click(function () {
-                const card = $(this).closest(".card");
-                console.log("card", card);
-                const storageKey = card.data("key");
-                // Remove this card from both page and localStorage
-                localStorage.removeItem(storageKey); 
-                card.remove(); 
+                const card = $(this).closest(".card"); 
+                const storageKey = card.data("key"); 
+                // after click delete button, show a dialog
+                $("#confirmDialog").dialog({
+                    title: "Delete Confirmation", 
+                    modal: true, 
+                    buttons: {
+                        Confirm: function () {
+                            // remove both page and localstorage
+                            localStorage.removeItem(storageKey); 
+                            card.remove(); 
+                            $(this).dialog("close"); 
+                        },
+                        Cancel: function () {
+                            $(this).dialog("close");
+                        },
+                    },
+                });
             });
-            // Edit button functionality
+            // click edit button
             targetCell.find(".editBtn").click(function () {
                 const card = $(this).closest(".card");
                 const storageKey = card.data("key");
-                const menuData = JSON.parse(localStorage.getItem(storageKey));
+                const recipeData = JSON.parse(localStorage.getItem(storageKey));
                 // Open form in edit
-                openMenuForm("Edit Menu", true, menuData, storageKey);
+                openMenuForm("Edit Menu", true, recipeData, storageKey);
             });
+            // click made it button 
         }
     }
     // Update an existing card
-    function updateCardInTable(day, mealType, menuTitle) {
+    function updateCardInTable(day, mealType, recipeName) {
         const targetCell = $(`.cell[data-x="${day}"][data-y="${mealType}"]`);
         if (targetCell.length > 0) {
-            targetCell.find(".menuTitle").text(menuTitle);
+            targetCell.find(".recipeName").text(recipeName);
         }
     }
     // Open menu form for add/edit
     function openMenuForm(title, isEdit, data = null, prevKey = null) {
         $("#menuForm").dialog("option", "title", title);
         $("#editMode").val(isEdit.toString());
+        // $("#recipeName").focus()
         if (isEdit && data) {
-            $("#menuDate").val(data.date);
-            $("#mealType").val(data.mealType);
-            $("#menuTitle").val(data.menuTitle);
+            $("#menuDate").val(data.date); 
+            $("#mealType").val(data.mealType); 
+            $("#recipeName").val(data.recipeName); 
+            $("#foodMateria").val(data.foodMateria); 
+            $("#preparationProcedure").val(data.preparationProcedure); 
             $("#editMode").data("prevKey", prevKey);
         } else {
-            $("#menuDate").val("");
-            $("#mealType").val("breakfast");
-            $("#menuTitle").val("");
+            $("#menuDate").val(""); 
+            $("#mealType").val("breakfast"); 
+            $("#recipeName").val(""); 
+            $("#foodMateria").val(""); 
+            $("#preparationProcedure").val(""); 
             $("#editMode").data("prevKey", "");
         }
         $("#menuForm").dialog("open");
+        $("#menuDate").datepicker({
+            dateFormat: "mm/dd/yy",
+            changeMonth: true,
+            changeYear: true
+        });
     }
     // Capitalize first letter of a string
     function capitalize(string) {
@@ -121,10 +157,10 @@ $(document).ready(function () {
         for (let i = 0; i < localStorage.length; i++) {
             const key = localStorage.key(i);
             if (key.startsWith("menu_")) {
-                const menuData = JSON.parse(localStorage.getItem(key));
-                const day = String(Number(menuData.date.split("/")[1])).padStart(2, "0");
-                const mealType = capitalize(menuData.mealType);
-                addCardToTable(day, mealType, menuData.menuTitle, key);
+                const recipeData = JSON.parse(localStorage.getItem(key));
+                const day = String(Number(recipeData.date.split("/")[1])).padStart(2, "0");
+                const mealType = capitalize(recipeData.mealType);
+                addCardToTable(day, mealType, recipeData.recipeName, key);
             }
         }
     }

@@ -11,7 +11,6 @@
 <body>
     <div class="add_button">
         <button id="addRecipeBtn">Add Recipe</button>
-        <!-- <button id="insertDivBtn">Insert Div</button> -->
     </div>
     <div class="calendar_table">
         <table id="recipeCalendar"></table>
@@ -19,21 +18,38 @@
     <div id="menuForm" title="AddOrEdit Menu">
         <form id="menuFormContent">
             <input type="hidden" id="editMode" name="editMode" value="false"> 
-            <label for="menuDate">Date:</label>
-            <input type="text" id="menuDate" name="menuDate" class="datepicker" required><br><br>
+            <div>
+                <label for="menuDate">Date:</label>
+                <input type="text" id="menuDate" name="menuDate" class="datepicker" required>
+            </div>
+            <div>
+                <label for="mealType">Meal Type:</label>
+                <select id="mealType" name="mealType" required>
+                    <option value="breakfast">Breakfast</option>
+                    <option value="lunch">Lunch</option>
+                    <option value="dinner">Dinner</option>
+                </select>
+            </div>
+            <div>
+                <label for="recipeName">Recipe Name:</label>
+                <input type="text" id="recipeName" name="recipeName" required>
+            </div>
+            <div>
+                <label for="foodMateria">Food Materia:</label>
+                <input type="text" id="foodMateria" name="foodMateria" required>
+            </div>
 
-            <label for="mealType">Meal Type:</label>
-            <select id="mealType" name="mealType" required>
-                <option value="breakfast">Breakfast</option>
-                <option value="lunch">Lunch</option>
-                <option value="dinner">Dinner</option>
-            </select><br><br>
-
-            <label for="menuTitle">Menu Title:</label>
-            <input type="text" id="menuTitle" name="menuTitle" required><br><br>
-
+            <label for="preparationProcedure">Preparation Procedure:</label>
+            <textarea id="preparationProcedure" name="preparationProcedure" required></textarea>
             <input type="submit" value="Save">
         </form>
+        <div id="confirmDialog" style="display: none;">
+            Are you sure you want to delete this item?
+        </div>
+    </div>
+    <div class="secondPart">
+        <div class="recipeContent">1</div>
+        <div class="timer">2</div>
     </div>
 
 </body>
