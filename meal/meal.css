@@ -163,3 +163,8 @@ td:hover {
     display: block;
     margin: 0 auto;
 }
+
+.displayContainer {
+    font-size: 30px;
+    text-align: center;
+}

@@ -1,9 +1,13 @@
 $(document).ready(function () {
+    // calendar
     const daysInMonth = 31;
     const monthName = "December";
     const meals = ["Breakfast", "Lunch", "Dinner"];
     //put id in each object, set as a global variable
     let currentId = localStorage.length + 1; 
+    //timer
+    let timerInterval;
+    $(".cancel").hide();
     // calendar table
     const table = $("#recipeCalendar");
     let thead = "<thead><tr><th></th>";
@@ -168,4 +172,61 @@ $(document).ready(function () {
         }
     }
     loadDataFromStorage();
+    const $startButton = $(".start");
+    const $cancelButton = $(".cancel");
+    const $stepInput = $("#step");
+    const $timeInput = $("#time");
+    const $inputContainer = $(".input-container");
+    const $displayContainer = $(".display-container");
+    const $timerDisplay = $("#timer-display");
+    // Start Timer
+    $(".start").click(function () {
+        const step = $("#step").val();
+        let time = parseInt($("#time").val(), 10);
+        if (!step || isNaN(time) || time <= 0) {
+            alert("Please enter valid step and time.");
+            return;
+        }
+        // input disabled
+        $("#step, #time").prop("disabled", true);
+        // hide start button, show cancel button
+        $(".start").hide();
+        $(".cancel").show();
+        const totalSeconds = time * 60;
+        updateTimerDisplay(totalSeconds);
+        // start count down
+        let remainingSeconds = totalSeconds;
+        timerInterval = setInterval(function () {
+            remainingSeconds--;
+            if (remainingSeconds <= 0) {
+                clearInterval(timerInterval);
+                alert("Time's up!");
+                resetTimer();
+                return;
+            }
+            updateTimerDisplay(remainingSeconds);
+        }, 1000);
+    });
+    // cancel button
+    $(".cancel").click(function () {
+        clearInterval(timerInterval); 
+        resetTimer();
+    });
+    // Update timer display
+    function updateTimerDisplay(seconds) {
+        const hours = Math.floor(seconds / 3600);
+        const minutes = Math.floor((seconds % 3600) / 60);
+        const secs = seconds % 60;
+        $("#timerDisplay").text(
+            `${String(hours).padStart(2, "0")}:${String(minutes).padStart(2, "0")}:${String(secs).padStart(2, "0")}`
+        );
+    }
+    // Reset timer status
+    function resetTimer() {
+        clearInterval(timerInterval);
+        $("#step, #time").prop("disabled", false); 
+        $("#timerDisplay").text("00:00:00"); 
+        $(".start").show(); 
+        $(".cancel").hide(); 
+    }
 });
