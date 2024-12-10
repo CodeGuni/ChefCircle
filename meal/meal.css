@@ -47,6 +47,11 @@ button:hover {
     overflow-x: scroll;
 }
 
+.calendar_table p {
+    color: #6b6b6b;
+    font-size: 14px;
+}
+
 table {
     border-collapse: collapse;
     width: 80%;
