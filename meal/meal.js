@@ -4,7 +4,7 @@ $(document).ready(function () {
     const monthName = "December";
     const meals = ["Breakfast", "Lunch", "Dinner"];
     //put id in each object, set as a global variable
-    let currentId = localStorage.length + 1; 
+    let currentId = localStorage.length + 1;
     //timer
     let timerInterval;
     $(".cancel").hide();
@@ -34,7 +34,7 @@ $(document).ready(function () {
             $("#menuDate").blur();
         }
     });
-    
+
     // Open "Add Menu" 
     $("#addRecipeBtn").click(function () {
         openMenuForm("Add Menu", false);
@@ -84,18 +84,18 @@ $(document).ready(function () {
             targetCell.html(cardHtml);
             // click delete button
             targetCell.find(".deleteBtn").click(function () {
-                const card = $(this).closest(".card"); 
-                const storageKey = card.data("key"); 
+                const card = $(this).closest(".card");
+                const storageKey = card.data("key");
                 // after click delete button, show a dialog
                 $("#confirmDialog").dialog({
-                    title: "Delete Confirmation", 
-                    modal: true, 
+                    title: "Delete Confirmation",
+                    modal: true,
                     buttons: {
                         Confirm: function () {
                             // remove both page and localstorage
-                            localStorage.removeItem(storageKey); 
-                            card.remove(); 
-                            $(this).dialog("close"); 
+                            localStorage.removeItem(storageKey);
+                            card.remove();
+                            $(this).dialog("close");
                         },
                         Cancel: function () {
                             $(this).dialog("close");
@@ -134,18 +134,18 @@ $(document).ready(function () {
         $("#menuForm").dialog("option", "title", title);
         $("#editMode").val(isEdit.toString());
         if (isEdit && data) {
-            $("#menuDate").val(data.date); 
-            $("#mealType").val(data.mealType); 
-            $("#recipeName").val(data.recipeName); 
-            $("#foodMateria").val(data.foodMateria); 
-            $("#preparationProcedure").val(data.preparationProcedure); 
+            $("#menuDate").val(data.date);
+            $("#mealType").val(data.mealType);
+            $("#recipeName").val(data.recipeName);
+            $("#foodMateria").val(data.foodMateria);
+            $("#preparationProcedure").val(data.preparationProcedure);
             $("#editMode").data("prevKey", prevKey);
         } else {
-            $("#menuDate").val(""); 
-            $("#mealType").val("breakfast"); 
-            $("#recipeName").val(""); 
-            $("#foodMateria").val(""); 
-            $("#preparationProcedure").val(""); 
+            $("#menuDate").val("");
+            $("#mealType").val("breakfast");
+            $("#recipeName").val("");
+            $("#foodMateria").val("");
+            $("#preparationProcedure").val("");
             $("#editMode").data("prevKey", "");
         }
         $("#menuForm").dialog("open");
@@ -172,13 +172,6 @@ $(document).ready(function () {
         }
     }
     loadDataFromStorage();
-    const $startButton = $(".start");
-    const $cancelButton = $(".cancel");
-    const $stepInput = $("#step");
-    const $timeInput = $("#time");
-    const $inputContainer = $(".input-container");
-    const $displayContainer = $(".display-container");
-    const $timerDisplay = $("#timer-display");
     // Start Timer
     $(".start").click(function () {
         const step = $("#step").val();
@@ -209,7 +202,7 @@ $(document).ready(function () {
     });
     // cancel button
     $(".cancel").click(function () {
-        clearInterval(timerInterval); 
+        clearInterval(timerInterval);
         resetTimer();
     });
     // Update timer display
@@ -224,9 +217,9 @@ $(document).ready(function () {
     // Reset timer status
     function resetTimer() {
         clearInterval(timerInterval);
-        $("#step, #time").prop("disabled", false); 
-        $("#timerDisplay").text("00:00:00"); 
-        $(".start").show(); 
-        $(".cancel").hide(); 
+        $("#step, #time").prop("disabled", false);
+        $("#timerDisplay").text("00:00:00");
+        $(".start").show();
+        $(".cancel").hide();
     }
 });
