@@ -7,6 +7,10 @@
     <link rel="stylesheet" href="meal.css">
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="../navbar/navbar.css"> 
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+    />
 </head>
 <body>
     <div class="add_button">
@@ -51,20 +55,32 @@
     <div class="secondPart">
         <div class="recipeContent">
             <div>
-                <h4>Recipe Name:</h4>
-                <p class="recipe"> </p>
+                <div class="iconAndTitle">
+                    <i class="fa-solid fa-mug-hot" style="color: #fcfcfc;"></i>
+                    <h4>Recipe Name:</h4>
+                </div>
+                <p class="recipe"></p>
             </div>
             <div>
-                <h4>food material:</h4>
+                <div class="iconAndTitle">
+                    <i class="fa-solid fa-mug-hot" style="color: #fcfcfc;"></i>
+                    <h4>food material:</h4>
+                </div>
                 <p class="material"> </p>
             </div>
             <div>
-                <h4>preparation procedure:</h4>
+                <div class="iconAndTitle">
+                    <i class="fa-solid fa-mug-hot" style="color: #fcfcfc;"></i>
+                    <h4>preparation procedure:</h4>
+                </div>
                 <p class="preparation">Please click on the recipe you want to make</p>
             </div>
         </div>
         <div class="timer">
-            <h4>Recipe timer</h4>
+            <div class="iconAndTitle">
+                <i class="fa-regular fa-clock" style="color: #fcfcfc;"></i>
+                <h4>Recipe timer</h4>
+            </div>
             <p>Please set the production time:</p>
             <div>
                 <label for="step">step:</label>
@@ -79,6 +95,9 @@
             <button class="cancel">cancel</button>
         </div>
     </div>
+    <footer>
+        <small>&copy; "Sitong Liu 8990939" 2024</small>
+    </footer>
 </body>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>

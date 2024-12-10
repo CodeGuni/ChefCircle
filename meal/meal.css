@@ -1,6 +1,7 @@
 body {
     font-family: Arial, sans-serif;
     margin-top: 90px;
+    margin-bottom: 30px;
     padding: 0;
     height: 100vh;
     background-color: #898989;
@@ -137,6 +138,13 @@ td:hover {
     background-color: #e67e22;
     border-radius: 10px;
 }
+.secondPart .iconAndTitle{
+    display: flex;
+    align-items: center;
+}
+.secondPart h4 {
+    margin-left: 5px;
+}
 .secondPart .recipeContent, .secondPart .timer {
     padding: 20px;
     color: #fff;
@@ -166,5 +174,9 @@ td:hover {
 
 .displayContainer {
     font-size: 30px;
+    text-align: center;
+}
+
+footer {
     text-align: center;
 }
