@@ -6,16 +6,19 @@ body {
     height: 100vh;
     background-color: #898989;
 }
+
 :root {
     --underline-color: #e67e22;
     --primary-color: #e67e22;
     --primary-color-hover: #f39c12;
     --light-grey: #ecebeb;
 }
+
 .add_button {
     text-align: right;
     padding: 16px 16px 0 0;
 }
+
 button {
     border: none;
     padding: 10px 20px;
@@ -24,17 +27,20 @@ button {
     color: #fff;
     cursor: pointer;
 }
+
 button:hover {
     opacity: 82%;
 }
 
-#menuFormContent div{
+#menuFormContent div {
     margin: 16px 0;
 }
+
 #menuFormContent label {
     display: inline-block;
     width: 110px;
 }
+
 .calendar_table {
     width: 97%;
     margin: 20px;
@@ -46,10 +52,11 @@ table {
     width: 80%;
     background-color: #ffffff;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    
+
 }
 
-th, td {
+th,
+td {
     border: 1px solid #ddd;
     text-align: center;
     padding: 10px;
@@ -70,7 +77,7 @@ td:hover {
     background-color: #f0f0f0;
 }
 
- .row-label {
+.row-label {
     background-color: #666;
     color: white;
     font-weight: bold;
@@ -133,22 +140,28 @@ td:hover {
     row-gap: 10px;
     margin: 20px;
 }
-.secondPart > div {
+
+.secondPart>div {
     width: 48%;
     background-color: #e67e22;
     border-radius: 10px;
 }
-.secondPart .iconAndTitle{
+
+.secondPart .iconAndTitle {
     display: flex;
     align-items: center;
 }
+
 .secondPart h4 {
     margin-left: 5px;
 }
-.secondPart .recipeContent, .secondPart .timer {
+
+.secondPart .recipeContent,
+.secondPart .timer {
     padding: 20px;
     color: #fff;
 }
+
 .secondPart p {
     border-radius: 5px;
     margin: 10px 0;
@@ -156,15 +169,18 @@ td:hover {
     background-color: var(--light-grey);
     color: #111;
 }
+
 .secondPart .timer div {
     margin: 16px 0;
 }
+
 .secondPart .timer input {
-    border: none; 
+    border: none;
     margin: 0 5px;
     height: 20px;
     border-radius: 5px;
 }
+
 .secondPart .timer button {
     background-color: var(--light-grey);
     color: #111;
