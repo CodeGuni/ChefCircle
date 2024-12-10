@@ -38,9 +38,10 @@
                 <label for="foodMateria">Food Materia:</label>
                 <input type="text" id="foodMateria" name="foodMateria" required>
             </div>
-
-            <label for="preparationProcedure">Preparation Procedure:</label>
-            <textarea id="preparationProcedure" name="preparationProcedure" required></textarea>
+            <div>
+                <label for="preparationProcedure">Preparation Procedure:</label>
+                <textarea id="preparationProcedure" name="preparationProcedure" required></textarea>
+            </div>
             <input type="submit" value="Save">
         </form>
         <div id="confirmDialog" style="display: none;">
@@ -48,10 +49,38 @@
         </div>
     </div>
     <div class="secondPart">
-        <div class="recipeContent">1</div>
-        <div class="timer">2</div>
+        <div class="recipeContent">
+            <div>
+                <h4>Recipe Name:</h4>
+                <p class="recipe"> </p>
+            </div>
+            <div>
+                <h4>food material:</h4>
+                <p class="material"> </p>
+            </div>
+            <div>
+                <h4>preparation procedure:</h4>
+                <p class="preparation">Please click on the recipe you want to make</p>
+            </div>
+        </div>
+        <div class="timer">
+            <h4>Recipe timer</h4>
+            <p>Please set the production time:</p>
+            <div>
+                <label for="step">step:</label>
+                <input type="text" id="step" name="step">
+            </div>
+            <div>
+                <label for="time">time:</label>
+                <input type="text" id="time" name="time">min
+            </div>
+            <div class="display-container">
+                <span id="timer-display">00:00:00</span>
+            </div>
+            <button class="start">time start</button>
+            <button class="cancel">cancel</button>
+        </div>
     </div>
-
 </body>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>

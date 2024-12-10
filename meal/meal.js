@@ -38,34 +38,30 @@ $(document).ready(function () {
     // Submit form
     $("#menuFormContent").submit(function (event) {
         event.preventDefault();
-        const menuDate = $("#menuDate").val(); 
+        const menuDate = $("#menuDate").val();
         const day = String(Number(menuDate.split("/")[1])).padStart(2, "0");
         const mealType = $("#mealType").val();
         const recipeName = $("#recipeName").val();
         const foodMateria = $("#foodMateria").val();
         const preparationProcedure = $("#preparationProcedure").val();
         const isEdit = $("#editMode").val() === "true";
-        const storageKey = `menu_${currentId}`;
-        const recipeData = { 
-            id: currentId, 
-            date: menuDate, 
-            mealType, 
-            recipeName, 
+        //use same key
+        const storageKey = isEdit ? $("#editMode").data("prevKey") : `menu_${currentId}`;
+        const recipeData = {
+            id: isEdit ? Number(storageKey.split('_')[1]) : currentId, // Maintain the original ID
+            date: menuDate,
+            mealType,
+            recipeName,
             foodMateria,
             preparationProcedure
-          };
+        };
+        // update data 
+        localStorage.setItem(storageKey, JSON.stringify(recipeData));
         if (isEdit) {
-            const prevKey = $("#editMode").data("prevKey");
-            // Remove old data if key has changed
-            if (prevKey && prevKey !== storageKey) {         
-                localStorage.removeItem(prevKey); 
-            }
-            localStorage.setItem(storageKey, JSON.stringify(recipeData));
             updateCardInTable(day, capitalize(mealType), recipeName);
         } else {
-            localStorage.setItem(storageKey, JSON.stringify(recipeData));
             addCardToTable(day, capitalize(mealType), recipeName, storageKey);
-            currentId++; 
+            currentId++;
         }
         $("#menuForm").dialog("close");
     });
@@ -112,6 +108,14 @@ $(document).ready(function () {
                 openMenuForm("Edit Menu", true, recipeData, storageKey);
             });
             // click made it button 
+            targetCell.find(".madeBtn").click(function () {
+                const card = $(this).closest(".card");
+                const storageKey = card.data("key");
+                const recipeData = JSON.parse(localStorage.getItem(storageKey));
+                $(".recipe").text(`${recipeData.recipeName}`)
+                $(".material").text(`${recipeData.foodMateria}`)
+                $(".preparation").text(`${recipeData.preparationProcedure}`)
+            })
         }
     }
     // Update an existing card
@@ -125,7 +129,6 @@ $(document).ready(function () {
     function openMenuForm(title, isEdit, data = null, prevKey = null) {
         $("#menuForm").dialog("option", "title", title);
         $("#editMode").val(isEdit.toString());
-        // $("#recipeName").focus()
         if (isEdit && data) {
             $("#menuDate").val(data.date); 
             $("#mealType").val(data.mealType); 
