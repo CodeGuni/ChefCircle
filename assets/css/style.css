@@ -19,7 +19,7 @@
     --spacing: 1rem;
 }
 
-   
+
 body {
     margin: 0;
     font-family: var(--font-family);
@@ -132,21 +132,22 @@ body {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    /* Adjust navbar layout */
+
+   
     .navbar {
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
     }
 
-   
+
     .logo-container {
         flex: 1;
     }
 
     /* Adjust navigation links for mobile */
     .nav-links {
-        display: none; 
+        display: none;
         position: absolute;
         border: 1px solid #ccc;
         top: 100px;
@@ -178,10 +179,10 @@ body {
         color: var(--light-color);
     } */
 
-    
+
     .action-icons {
         flex: 0;
-        
+
     }
 
     /* Add a hamburger menu icon for opening navigation links */
@@ -373,6 +374,7 @@ body {
     font-size: 1.2rem;
     margin-top: 0.5rem;
 }
+
 /* Footer */
 .footer-wrapper {
     width: 100%;
@@ -384,7 +386,8 @@ body {
     margin-top: auto;
     font-size: 1rem;
     position: relative;
-    overflow: hidden; /* Prevent horizontal overflow */
+    overflow: hidden;
+    /* Prevent horizontal overflow */
 }
 
 .footer-wrapper p {
@@ -450,7 +453,8 @@ body {
 .banner-slide img {
     width: 100vw;
     height: 60vh;
-    object-fit: cover; /* Ensure the image fits properly */
+    object-fit: cover;
+    /* Ensure the image fits properly */
 }
 
 /* Container Padding */
@@ -472,4 +476,3 @@ body {
         font-size: 0.9rem;
     }
 }
-
