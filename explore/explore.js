@@ -141,11 +141,10 @@ function toggleRecipeDetails(recipeId) {
     const modalTitle = recipeModal.querySelector('.modal-title');
     const ingredientsList = recipeModal.querySelector('.modal-ingredients');
     const instructionsList = recipeModal.querySelector('.modal-instructions');
-
+    
     modalTitle.textContent = recipe.title;
 
     stopCooking();
-    
     // Update start button click handler
     modalStartBtn.onclick = () => {
         if (!modalStartBtn.classList.contains('active')) {
