@@ -1,0 +1,15 @@
+1. A homepage with title Submit Your Delicious Recipe
+    - contains different cards of submitted recipies.
+    - At the top right side, there will be a button to create new recipe.
+    - Also another button which provides several features like,
+    - Edit existing recipe cards or delete them.
+2. When a recipe card is clicked, a new page or popup will display the recipe.
+    - Well designed recipe page which shows all the data.
+    - Make use of icons to make it more beautifull.
+    - The recipe will be displayed, steps will be displayed in an accordian
+    which shows the title only unless it is expanded.
+3. When the add button is clicked, a new popup or page will show up with a
+form to enter the details.
+    - The form should be a three or more step form which get's all the recipe
+    details and store them in an array or something.
+

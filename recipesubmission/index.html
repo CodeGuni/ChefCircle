@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Submit Your Delicious Recipe</title>
+    <link rel="stylesheet" href="navbar.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header class="navbar">
+      <a href="index.html" class="navbar-brand">Chef Circle</a>
+      <nav>
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a href="explore.html" class="nav-link">Recipes</a>
+          </li>
+          <li class="nav-item">
+            <a href="mealplanner.html" class="nav-link">Meal Planner</a>
+          </li>
+          <li class="nav-item">
+            <a href="community.html" class="nav-link">Community</a>
+          </li>
+          <li class="nav-item">
+            <a href="recipesubmission.html" class="nav-link">Submit Recipe</a>
+          </li>
+        </ul>
+        <div class="hamburger">&#9776;</div>
+      </nav>
+    </header>
+
+    <main>
+      <div class="element circle circle1"></div>
+      <div class="element circle circle2"></div>
+      <div class="card-wrapper">
+        <div class="cw-left">
+          <div class="cw-l-head">
+            <div class="avatar">
+              <img src="images/avatar.jpg" alt="book image" />
+            </div>
+            <h2>The recipe book</h2>
+          </div>
+          <div class="cw-l-body">
+            <button class="nav-btn" id="createRecipe">
+              <i class="fa-solid fa-square-plus"></i>
+              <p>Create Recipe</p>
+            </button>
+            <button class="nav-btn" id="viewRecipe">
+              <i class="fa-solid fa-folder-open"></i>
+              <p>View Recipies</p>
+            </button>
+            <button class="nav-btn" id="features">
+              <i class="fa-solid fa-bolt"></i>
+              <p>Features</p>
+            </button>
+            <button class="nav-btn" id="credits">
+              <i class="fa-solid fa-hand-holding-heart"></i>
+              <p>Credits</p>
+            </button>
+          </div>
+        </div>
+        <div class="cw-right">
+          <div class="slide slide1">
+            <form class="recipe-details" id="recipeForm">
+              <div class="title"><h2>Name Your Delicious Recipe</h2></div>
+              <div class="errors">
+                <span class="msg"
+                  ><i class="fa-solid fa-circle-exclamation"></i> All fields are
+                  required</span
+                >
+              </div>
+              <div class="success">
+                <span class="msg"
+                  ><i class="fa-regular fa-circle-check"></i> Recipe created
+                  successfully</span
+                >
+              </div>
+              <div class="data">
+                <div class="input-group">
+                  <label for="recipeName">Recipe Name</label>
+                  <input class="inputField" type="text" id="recipeName" />
+                </div>
+
+                <div class="input-group">
+                  <label for="recipeCategory">Category</label>
+                  <select id="recipeCategory" class="inputField">
+                    <option value="">Select a category</option>
+                    <option value="appetizer">Appetizer</option>
+                    <option value="main">Main Course</option>
+                    <option value="dessert">Dessert</option>
+                    <option value="athlet-appetizer">Athlet-appetizer</option>
+                    <option value="vegan">Vegant</option>
+                    <option value="vegetarian">Vegetarian</option>
+                    <option value="non-vegetarian">Non-vegetarian</option>
+                    <option value="diet-food">Diet-food</option>
+                    <option value="diet-food">Salad</option>
+                  </select>
+                </div>
+                <div class="input-group">
+                  <label for="ingredients">Ingredients</label>
+                  <p class="comment">Eg. Salt: 100g, Milk: 1ltr, apples: 3</p>
+                  <textarea id="ingredients" class="inputField"></textarea>
+                </div>
+
+                <div class="input-group">
+                  <h3>Cooking Instructions</h3>
+                  <div class="step-inputs">
+                    <div class="step">
+                      <div>
+                        <label for="step1">Step </label>
+                        <div class="step-item">
+                          <textarea
+                            name="step1"
+                            class="inputField stepField"
+                            id="step1"
+                          ></textarea>
+                          <button id="remove" class="remove">
+                            <i class="fa-solid fa-trash"></i>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <button id="add" class="add">
+                    <i class="fa-regular fa-square-plus"></i>
+                    Add new step
+                  </button>
+                </div>
+              </div>
+              <button type="submit" class="submit" id="submit">
+                Submit Recipe
+              </button>
+            </form>
+            <div class="sl-right">
+              <div id="imageSlider" class="slider">
+                <div class="slider-images">
+                  <img src="images/book1.svg" alt="Image 1" />
+                  <img src="images/book2.svg" alt="Image 2" />
+                  <img src="images/book3.svg" alt="Image 3" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="slide slide2">
+            <h2>Great Recipes Await! More to Discover</h2>
+            <div class="recipe-cards"></div>
+          </div>
+          <div class="slide slide3">
+            <h2>
+              This is the resources where i refered for completing this page
+            </h2>
+
+            <div class="accordions">
+              <div id="accordion">
+                <h3>Main glasmorphism design</h3>
+                <div>
+                  <p>
+                    Leveraging the tutorial by Developedbyed, I utilized my
+                    skills to create a customized glasmorphism design that
+                    reflects my unique style and creativity.
+                  </p>
+                  <a
+                    href="https://www.youtube.com/watch?v=O7WbVj5apxU&ab_channel=developedbyed"
+                    target="blank"
+                    class="ac-btn"
+                    >View in new tab</a
+                  >
+                </div>
+                <h3>Recipe card inspiration</h3>
+                <div>
+                  <p>
+                    Drawing inspiration from this card design, I incorporated my
+                    own design elements to craft a visually appealing and
+                    functional recipe card.
+                  </p>
+                  <a
+                    href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhEY0Dg3d1AneVjb5hF6LdXgCvN7IyX9-Wil2UrtvJVsT6T-mi4tE6DynLz8mIxrJjDfWbeK9-STElO_jeK30siqajHcoi3P1_PXBczw9HsM4X36DqfX1ngB5qOF5PVqNiqhAoetBHZAWE/s0/Course-Card-Design-html-and-css.jpg"
+                    target="blank"
+                    class="ac-btn"
+                    >View in new tab</a
+                  >
+                </div>
+                <h3>Illustrations are from Storyset</h3>
+                <div>
+                  <p>
+                    I integrated visually engaging SVG illustrations sourced
+                    from Storyset, adapting them to align seamlessly with the
+                    overall design and purpose of my project.
+                  </p>
+                  <a
+                    href="https://storyset.com/information"
+                    target="blank"
+                    class="ac-btn"
+                    >View in new tab</a
+                  >
+                </div>
+                <h3>Images from Pixabay</h3>
+                <div>
+                  <p>
+                    With my careful selection and customization, images from
+                    Pixabay enhanced the visual appeal and cohesiveness of my
+                    project.
+                  </p>
+                  <a
+                    href="https://pixabay.com/photos/cooking-ingredients-flat-lay-bake-5880136/"
+                    target="blank"
+                    class="ac-btn"
+                    >View in new tab</a
+                  >
+                </div>
+                <h3>Thanks to font awsome</h3>
+                <div>
+                  <p>
+                    All icons are from fontawsome. Without it, I would have
+                    struggled to add icons.
+                  </p>
+                  <a
+                    href="https://fontawesome.com/search"
+                    target="blank"
+                    class="ac-btn"
+                    >View in new tab</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="slide slide4">
+            <h2>The features of my page</h2>
+            <div class="list">
+              <div id="accordion2">
+                <h3>Ingredient Processing</h3>
+                <div>
+                  The ingredients input field processes the input into key-value
+                  pairs (e.g., "flour: 200g"), converting user input into a
+                  structured format for better storage and display in the
+                  recipe.
+                </div>
+                <h3>Dynamic Recipe Steps Management</h3>
+                <div>
+                  <p>
+                    The ability to dynamically add and remove cooking steps
+                    within the form, allowing users to customize the number of
+                    steps based on the recipe. Each step has its own text area,
+                    with an option to remove individual steps, providing
+                    flexibility to users when submitting a recipe.
+                  </p>
+                </div>
+                <h3>Custom Image Slider with Auto-Slid</h3>
+                <div>
+                  <p>
+                    The recipe page includes an image slider that automatically
+                    transitions between images every 3 seconds. The slider
+                    pauses when hovered over, offering a better user experience
+                    by preventing distraction when the user is interacting with
+                    the page.
+                  </p>
+                </div>
+                <h3>jQuery UI Accordion for Credits/Resources:</h3>
+                <div>
+                  <p>
+                    An accordion-style component that neatly organizes the
+                    resources and credits used in building the page, such as
+                    design inspiration, illustrations, and images.
+                  </p>
+                </div>
+                <h3>Recipe Display Cards</h3>
+                <div>
+                  A clean and interactive way to display recipes in cards, where
+                  users can view the name, category, and a short preview of
+                  ingredients and steps. The recipe cards include a "View full
+                  recipe" button that opens a detailed view of the full recipe.
+                </div>
+                <h3>Real-Time Validation</h3>
+                <div>
+                  As users interact with the form, it provides real-time
+                  validation. Fields that are left empty are highlighted with a
+                  red outline, immediately guiding users to fix errors before
+                  submission.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="popup-wrapper"></div>
+    </main>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
