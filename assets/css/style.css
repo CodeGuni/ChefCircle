@@ -9,16 +9,15 @@
 
 /* Variables and color checked by contrast checker */
 :root {
-    --primary-color: #004B85;
-    --secondary-color: #1a1a1a;
-    --background-color: #f4f4f4;
+    --primary-color: #e67e22;
+    --secondary-color: #333333;
+    --background-color: #ffffff;
     --light-color: #ffffff;
     --dark-color: #000000;
     --font-family: 'Poppins', sans-serif;
     --font-size-base: 16px;
     --spacing: 1rem;
 }
-
 
 body {
     margin: 0;

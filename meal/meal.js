@@ -1,3 +1,4 @@
+//Sitong Liu 8990939
 $(document).ready(function () {
     // calendar
     const daysInMonth = 31;
