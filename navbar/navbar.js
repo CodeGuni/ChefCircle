@@ -4,7 +4,7 @@ function loadNavbar() {
     // navbar structure
     const navbarHTML = `
     <header class="navbar">
-        <a href="index.html" class="navbar-brand">Chef Circle</a>
+        <a href="../index.html" class="navbar-brand">Chef Circle</a>
         <nav>
             <ul class="navbar-nav">
                 <li class="nav-item"><a href="../explore/explore.html" class="nav-link">Recipes</a></li>
