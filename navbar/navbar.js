@@ -10,7 +10,7 @@ function loadNavbar() {
                 <li class="nav-item"><a href="../explore/explore.html" class="nav-link">Recipes</a></li>
                 <li class="nav-item"><a href="../meal/meal.html" class="nav-link">Meal Planner</a></li>
                 <li class="nav-item"><a href="../comunityhub/hub.html" class="nav-link">Community</a></li>
-                <li class="nav-item"><a href="recipesubmission.html" class="nav-link">Submit Recipe</a></li>
+                <li class="nav-item"><a href="../recipesubmission/recipesubmission.html" class="nav-link">Submit Recipe</a></li>
                 <li class="nav-item theme-toggle-container">
                     <label class="theme-toggle">
                         <input type="checkbox" id="theme-toggle">
