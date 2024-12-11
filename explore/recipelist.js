@@ -237,8 +237,8 @@ export const recipes = [
         id: 8,
         title: "Beef and Broccoli Stir-Fry",
         description: "Quick and flavorful Asian stir-fry with tender beef",
-        image: "placeholder-recipe.jpg",
-        cookingTime: 25,
+        image: "gtest.jpg",
+        cookingTime: 1,
         rating: 4.6,
         category: "dinner",
         nutrition: {

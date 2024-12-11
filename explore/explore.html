@@ -4,13 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Recipe Explorer</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../navbar/navbar.css">
     <link rel="stylesheet" href="explore.css">
 </head>
 <body>
-    <!-- Main Content -->
     <div class="content-wrapper">
-        <!-- Search and Filters -->
         <div class="search-section">
             <div class="search-bar">
                 <input type="text" id="searchInput" placeholder="Search recipes...">
@@ -49,19 +48,12 @@
                 </div>
             </div>
         </div>
-
-        <!-- Recipe Container -->
-        <main class="recipes-container grid-view">
-            <!-- Recipes will be inserted here -->
-        </main>
+        <main class="recipes-container grid-view"></main>
     </div>
-
-    <!-- Recipe Template -->
     <template id="recipe-template">
         <article class="recipe-card">
             <div class="recipe-image">
                 <img src="" alt="">
-                <!-- Add nutrition modal that shows on hover -->
                 <div class="nutrition-modal">
                     <h3>Nutrition Information</h3>
                     <p>Calories: <span class="nutrition-calories"></span> kcal</p>
@@ -110,12 +102,59 @@
                         <ol class="modal-instructions"></ol>
                     </div>
                 </div>
-                <button id="modalDownloadBtn" class="modal-download-btn">Download Recipe</button>
-           
+                <div class="modal-actions">
+                    <button id="modalDownloadBtn" class="modal-download-btn">Download Recipe</button>
+                    <button id="modalFavoriteBtn" class="modal-favorite-btn">🤍</button>
+                    <button id="modalStartBtn" class="modal-start-btn">Start Cooking ▶️</button>
+                </div>
+                <div id="recipe-progress" class="recipe-progress hidden">
+                    <div class="timer-display">Time Remaining: <span id="time-remaining">00:00</span></div>
+                    <div class="progress-bar">
+                        <div class="progress-fill"></div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-   
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Recipe Explorer</h3>
+                <p>Discover amazing recipes and cooking inspiration for every occasion. Made with love for food enthusiasts.</p>
+                <div class="student-info">
+                    <img src="me.jpg" alt="Gunpreet Singh Pic" class="student-image">
+                    <div>
+                        <p>Created by: Gunpreet Singh</p>
+                        <p>Student ID: 9022194</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="explore.html">Explore Recipes</a></li>
+                    <li><a href="../meal/meal.html">Meal Planner</a></li>
+                    <li><a href="../submit/submit.html">Submit Recipe</a></li>
+                    <li><a href="../comunityhub/hub.html">Community Hub</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <ul class="footer-links">
+                    <li>📧 Email: Gsingh2194@Conestogac.on.ca</li>
+                    <li>📞 Phone: (647) 923-2519</li>
+                    <li>📍 Location: Cooking School Conestoga Doon</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="social-links">
+                <a href="https://github.com/CodeGuni/ChefCircle" title="GitHub"><i class="fab fa-github"></i></a>
+            </div>
+            <p>&copy; 2024 Recipe Explorer. Made with <span class="wave-emoji">👋</span></p>
+        </div>
+    </footer>
     <script src="../navbar/navbar.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script type="module" src="explore.js"></script>

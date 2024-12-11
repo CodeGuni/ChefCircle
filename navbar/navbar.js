@@ -7,9 +7,9 @@ function loadNavbar() {
         <a href="index.html" class="navbar-brand">Chef Circle</a>
         <nav>
             <ul class="navbar-nav">
-                <li class="nav-item"><a href="explore.html" class="nav-link">Recipes</a></li>
-                <li class="nav-item"><a href="mealplanner.html" class="nav-link">Meal Planner</a></li>
-                <li class="nav-item"><a href="community.html" class="nav-link">Community</a></li>
+                <li class="nav-item"><a href="../explore/explore.html" class="nav-link">Recipes</a></li>
+                <li class="nav-item"><a href="../meal/meal.html" class="nav-link">Meal Planner</a></li>
+                <li class="nav-item"><a href="../comunityhub/hub.html" class="nav-link">Community</a></li>
                 <li class="nav-item"><a href="recipesubmission.html" class="nav-link">Submit Recipe</a></li>
                 <li class="nav-item theme-toggle-container">
                     <label class="theme-toggle">
