@@ -3,47 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Recipe Hub</title>
-    <!-- External CSS -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <title>Recipe Hub - Home</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" 
+          integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" 
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="assets/css/style.css">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- HEADER -->
     <header class="global-header">
         <div class="container">
             <nav class="navbar">
-                <!-- Logo -->
                 <div class="logo-container">
-                    <a href="/" class="logo-link">Recipe<span>Hub</span></a>
+                    <a href="index.html" class="logo-link">Recipe<span>Hub</span></a>
                 </div>
-                <!-- Navigation Menu -->
                 <ul class="nav-links">
-                    <li><a href="#home" class="nav-item">Home</a></li>
-                    <li><a href="#mealplanner" class="nav-item">Meal Planner </a></li>
-                    <li><a href="./comunityhub/hub.html" class="nav-item">Comunity</a></li>
-                    <li><a href="#recipesubmission" class="nav-item">Submit Recipie</a></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="meal/meal.html">Meal Planner</a></li>
+                    <li><a href="comunityhub/hub.html">Community</a></li>
+                    <li><a href="explore/explore.html">Explore</a></li>
                 </ul>
-                <!-- Action Icons -->
                 <div class="action-icons">
-                    <button id="settings-button" class="icon-wrapper"><img width="20" src="https://www.svgrepo.com/show/13688/settings.svg" alt="setting-icon" srcset=""></button>
+                    <button id="settings-button" class="icon-wrapper"><img width="20" src="https://www.svgrepo.com/show/13688/settings.svg" alt="setting-icon"></button>
+                    <button class="hamburger-menu" id="hamburger-menu">&#9776;</button>
                 </div>
             </nav>
         </div>
     </header>
 
-    <!-- HERO SECTION -->
-    <section class="hero-section">
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <h1>Welcome</h1>
-            <p>Explore new possibilities with our curated solutions.</p>
-            <a href="#explore" class="hero-button">Discover More</a>
+    <section id="banner-slider" class="banner-slider">
+        <div class="slider-container">
+            <div class="banner-slide">
+                <img src="https://img.freepik.com/free-photo/woman-taking-photo-food-pan_23-2147959008.jpg" alt="Woman check for recipe on mobile">
+            </div>
+            <div class="banner-slide">
+                <img src="https://img.freepik.com/free-photo/healthy-vegetarian-food-with-notepad_23-2148452805.jpg" alt="Healthy Meal plan">
+            </div>
+            <div class="banner-slide">
+                <img src="https://img.freepik.com/free-photo/top-view-tasty-mushroom-soup-with-different-seasonings-dark-background-soup-mushroom-seasoning-food_140725-80743.jpg" alt="Easy Cooking">
+            </div>
         </div>
     </section>
 
-    <!-- SETTINGS MODAL -->
+    <main class="container">
+        <section id="about-us">
+            <h2>Welcome to Recipe Hub</h2>
+            <p>Your one-stop platform for finding and sharing amazing recipes! Explore, create, and enjoy a world of culinary delights with us.</p>
+        </section>
+        <section id="features">
+            <h2>Our Features</h2>
+            <ul>
+                <li>Browse thousands of recipes</li>
+                <li>Plan meals with our meal planner</li>
+                <li>Share your own recipes</li>
+                <li>Connect with a vibrant community</li>
+            </ul>
+        </section>
+    </main>
+
     <div id="settings-modal" class="setting-modal">
         <div class="modal-content">
             <span class="close-modal" id="close-modal">&times;</span>
@@ -58,6 +75,13 @@
         </div>
     </div>
 
-    <script src="assets/js/script.js"></script>
+    <footer class="footer-wrapper">
+        <div class="container">
+            <p>&copy; 2024 Recipe Hub. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" defer></script>
+    <script src="assets/js/script.js" defer></script>
 </body>
 </html>

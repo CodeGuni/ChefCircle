@@ -1,6 +1,11 @@
+ 
  # ChefCircle
 
 ChefCircle is a modern recipe-sharing platform designed for food enthusiasts to explore, share, and connect over culinary creations. With a sleek design, interactive features, and smooth animations, it offers an engaging and user-friendly experience.
+
+
+## 🔗 GitHub Repository
+You can access the project repository here: [ChefCircle GitHub Repository](https://github.com/YourGitHubUsername/ChefCircle)
 
 
 ## 🚀 Features
@@ -13,6 +18,7 @@ ChefCircle is a modern recipe-sharing platform designed for food enthusiasts to 
 
 ### 👥 Individual Responsibilities
 - **Recipe Submission:** Interactive form with live validation, image previews, and step builder.
+
 - **Recipe Explorer:** Toggle views, recipe filtering, print functionality, and ratings display.
 - **Meal Planner:** Drag-and-drop calendar, shopping list generator, and cooking timer.
 - **Community Hub:** Comments, user ratings, bookmarks, and cooking tips.
