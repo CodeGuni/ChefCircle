@@ -53,8 +53,27 @@ function stopCooking() {
 function updateTimer() {
     if (timeLeft <= 0) {
         stopCooking();
-        alert('Hope you enjoyed the cooking session, Please leave feedback for us on community page');
-        return;
+      
+        // Display feedback form when user finished cooking
+        const feedbackModal = document.getElementById('feedbackModal');
+        feedbackModal.classList.remove('hidden');
+        feedbackModal.classList.add('active');
+        
+        const form = document.getElementById('cookingFeedbackForm');
+        form.onsubmit = function(e) {
+            e.preventDefault();
+            console.log('Feedback:', document.getElementById('feedback').value);
+            feedbackModal.classList.add('hidden');
+            feedbackModal.classList.remove('active');
+            form.reset();
+        };
+
+        const closeBtn = feedbackModal.querySelector('.close-modal');
+        closeBtn.onclick = function() {
+            feedbackModal.classList.add('hidden');
+            feedbackModal.classList.remove('active');
+        };
+             return;
     }
 
     // Update time display

@@ -155,6 +155,21 @@
             <p>&copy; 2024 Recipe Explorer. Made with <span class="wave-emoji">👋</span></p>
         </div>
     </footer>
+    <div id="feedbackModal" class="recipe-modal hidden">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-body">
+                <h2 class="modal-title">How was your cooking experience?</h2>
+                <form id="cookingFeedbackForm">
+                    <div class="form-group">
+                        <label for="feedback">Share your experience with us:</label>
+                        <textarea id="feedback" rows="3" placeholder="Tell us how it went and how we can improve this recipie"></textarea>
+                    </div>
+                    <button type="submit" class="modal-download-btn">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
     <script src="../navbar/navbar.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script type="module" src="explore.js"></script>
