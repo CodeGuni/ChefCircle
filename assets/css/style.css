@@ -133,7 +133,7 @@ body {
 /* Responsive Design */
 @media (max-width: 768px) {
 
-   
+
     .navbar {
         flex-direction: row;
         justify-content: space-between;
@@ -336,15 +336,6 @@ body {
 }
 
 
-
-/* custom css for slider and banner  */
-
-/* .hero-section {
-    position: relative;
-    overflow: hidden;
-    height: 70vh;
-} */
-
 #hero-slider {
     display: flex;
     width: 300%;
@@ -454,10 +445,9 @@ body {
     width: 100vw;
     height: 60vh;
     object-fit: cover;
-    /* Ensure the image fits properly */
+
 }
 
-/* Container Padding */
 .container {
     padding: 20px;
 }
